@@ -3,13 +3,12 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-pocetna',
-  templateUrl: './pocetna.component.html',
-  styleUrls: ['./pocetna.component.css']
+  selector: 'app-lista-ponuda',
+  templateUrl: './lista-ponuda.component.html',
+  styleUrls: ['./lista-ponuda.component.css']
 })
-export class PocetnaComponent implements OnInit {
+export class ListaPonudaComponent implements OnInit {
   form: FormGroup;
-
   constructor(private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit() {
@@ -20,9 +19,6 @@ export class PocetnaComponent implements OnInit {
       availability:  ['', Validators.required],
       brOsoba:  ['', Validators.required]
     });
-  }
-  trazi(){
-    this.router.navigate(['listaPonuda']);
   }
 
 }

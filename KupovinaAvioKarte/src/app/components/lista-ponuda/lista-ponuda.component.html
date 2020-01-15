@@ -1,0 +1,120 @@
+<form [formGroup]="form">
+<div class="col-md-5" style="margin: 1em; align-content: center; border:1px solid black;">
+  <label>Sarajevo (SJJ) - Berlin (Svi)</label>
+  <label style="margin-left:2em">1 osoba | Ekonomska klasa</label>
+  <label style="margin-left:2em">17.01.2020-22.01.2020</label>
+</div>
+
+<div class="row col-md-12 justify-content-center">
+  <div class="col-md-2" style="margin: 1em; border: 1px solid black; display: grid;">
+    <label>Najbolja ponuda</label>
+    <label style="font-weight: bold;">540 BAM</label>
+    <label>Trajanje: 3h 20 min</label>
+  </div>
+  <div class="col-md-2" style="margin: 1em; border: 1px solid black; display: grid;">
+    <label>Najjeftinija ponuda</label>
+    <label style="font-weight: bold;">490 BAM</label>
+    <label>Trajanje: 8h 45 min</label>
+  </div>
+  <div class="col-md-2" style="margin: 1em; border: 1px solid black; display: grid;">
+    <label>Najkraća ruta</label>
+    <label style="font-weight: bold;">540 BAM</label>
+    <label>Trajanje: 3h 20 min</label>
+  </div>
+</div>
+
+
+
+
+<div class="row justify-content-left">
+  <div class="col-md-3" id="propertyFilters">
+
+    <div class="card form-group">
+      <div class="card-body collapse-show" id="filterCollapse">
+
+        <div class="row justify-content-center col-md-2">
+          <label class="pl-5">Međustajanja</label>
+          <div class="input-group form-group" style="width: 80%;">
+            <mat-checkbox formControlName="availability">Direktni</mat-checkbox>
+            <mat-checkbox formControlName="availability">1 stajanje</mat-checkbox>
+            <mat-checkbox formControlName="availability">2+ stajanja</mat-checkbox>
+          </div>
+        </div>
+
+        <div class="row justify-content-left">
+          <label>Vrijeme leta u polasku</label>
+          <div class="input-group form-group col-md-12" style="width: 80%; margin-top: 1em;">
+            <label>00:00</label>
+            <mat-slider></mat-slider>
+            <label>23:59</label>
+          </div>
+        </div>
+
+        <div class="row justify-content-left">
+          <label>Vrijeme leta u povratku</label>
+          <div class="input-group form-group col-md-12" style="width: 80%; margin-top: 1em;">
+            <label>00:00</label>
+            <mat-slider></mat-slider>
+            <label>23:59</label>
+          </div>
+        </div>
+
+        <div class="row justify-content-left">
+          <label>Trajanje leta</label>
+          <div class="input-group form-group col-md-12" style="width: 80%; margin-top: 1em;">
+            <label>03:20</label>
+            <mat-slider></mat-slider>
+            <label>42:50</label>
+          </div>
+        </div>
+
+        <div class="row justify-content-center col-md-2">
+          <label class="pl-5">Kompanije</label>
+          <div class="input-group form-group" style="width: 80%;">
+            <mat-checkbox formControlName="availability">Air France</mat-checkbox>
+            <mat-checkbox formControlName="availability">Lufthansa</mat-checkbox>
+            <mat-checkbox formControlName="availability">Turkish airlines</mat-checkbox>
+            <mat-checkbox formControlName="availability">Qatar Airways</mat-checkbox>
+          </div>
+        </div>
+
+        <div class="row justify-content-center col-md-2">
+          <label class="pl-5">Aerodromi</label>
+
+          <div class="input-group form-group" style="width: 80%;">
+            <mat-checkbox formControlName="availability">Isti u oba pravca</mat-checkbox>
+            <mat-checkbox formControlName="availability">SXF</mat-checkbox>
+            <mat-checkbox formControlName="availability">FXL</mat-checkbox>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-7 col-xs-12" id="propertiesList">
+    <div class="row justify-content-center">
+      <div class="col-11 form-group">
+        <app-kartica-ponuda></app-kartica-ponuda>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-1" id="propertyFilters">
+    <div class="row justify-content-center" style="display: grid;border:1px solid black; margin-top: 1em;" >
+      <div form-group style="margin-left:2em;">
+       <label style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: medium;">540 KM</label>
+       <label>Ukupno: 1080 BAM</label>
+       <div class="col-xs-1" style="margin-bottom:2em;">
+        <button type="button" class="btn btn-primary">Ponuda</button>
+       </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</div>
+</form>
