@@ -1,0 +1,57 @@
+<form [formGroup]="form"  (ngSubmit)="nesto()">
+<div id="outer-div">
+  <!-- style="background: url('world.jfif')"-->
+  <div id="inner-div">
+    <div class="form-group row pl-2">
+      <div>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Dvosmjerna</mat-radio-button>
+          <mat-radio-button value="2">Jednosmjerna</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="col-sm-5">
+        <mat-form-field>
+          <input matInput class="form-control" type="text" formControlName="polaziste" placeholder="Drzava, Grad ili Aerodrom" required >
+        </mat-form-field>
+      </div>
+
+      <div class="col-sm-5 pl-1">
+        <mat-form-field >
+          <input matInput class="form-control" type="text" formControlName="odrediste" placeholder="Drzava, Grad ili Aerodrom" required>
+          <!--  [ngClass]="{ 'is-invalid': submitted && form.controls.name.errors}"-->
+        </mat-form-field>
+      </div>
+
+    <div class="col-md-4">
+          <mat-select class="form-control" formControlName="klasa" placeholder="Izaberite klasu">
+            <mat-option value="1">Ekonomska</mat-option>
+            <mat-option value="3">Prva</mat-option>
+
+          </mat-select>
+    </div>
+    <div class="col-sm-5">
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Datum polaska">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+
+
+    </div>
+    <div class="col-sm-4">
+      <mat-form-field>
+        <input matInput class="form-control" formControlName="brOsoba" type="number" placeholder="Broj osoba" required>
+      </mat-form-field>
+    </div>
+
+    <div class="col-md-12">
+      <mat-checkbox formControlName="availability">Samo direktni</mat-checkbox>
+      <mat-checkbox formControlName="availability">Sa presjedanjem</mat-checkbox>
+      <mat-checkbox formControlName="availability">Svi letovi</mat-checkbox>
+    </div>
+  </div>
+  </div>
+
+</div>
+</form>
