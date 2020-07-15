@@ -5,6 +5,8 @@ import { MatTabsModule, MatInputModule,
   MatRadioModule, MatSliderModule,
   MatSelectModule, MatNativeDateModule } from '@angular/material';
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
+import {MatStepperModule} from '@angular/material/stepper';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +16,14 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ListaPonudaComponent } from './components/lista-ponuda/lista-ponuda.component';
 import { KarticaPonudaComponent } from './components/kartica-ponuda/kartica-ponuda.component';
 
+import { LetService } from './services/let.service';
+import { UkupnoComponent } from './components/ukupno/ukupno.component';
+import { PonudaComponent } from './components/ponuda/ponuda.component';
+import { PutnikComponent } from './components/putnik/putnik.component';
+import { ServisPonudaComponent } from './components/servis-ponuda/servis-ponuda.component';
+import { PlacanjeComponent } from './components/placanje/placanje.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +31,11 @@ import { KarticaPonudaComponent } from './components/kartica-ponuda/kartica-ponu
     PocetnaComponent,
     ListaPonudaComponent,
     KarticaPonudaComponent,
+    UkupnoComponent,
+    PonudaComponent,
+    PutnikComponent,
+    ServisPonudaComponent,
+    PlacanjeComponent
 
 
   ],
@@ -38,7 +53,9 @@ import { KarticaPonudaComponent } from './components/kartica-ponuda/kartica-ponu
     MatInputModule,
     MatNativeDateModule,
     MatRadioModule,
-    MatSliderModule
+    MatSliderModule,
+    FontAwesomeModule,
+    MatStepperModule
 
   ],
   providers: [],

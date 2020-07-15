@@ -1,61 +1,63 @@
 <form [formGroup]="form" >
 <div id="outer-div">
   <!-- style="background: url('world.jfif')"-->
-  <div id="inner-div" style="margin-top: 5em;">
+  <div id="inner-div" style="margin-top: 5em;margin-bottom: 5em;">
     <div class="form-group row pl-2">
-      <div class="col-md-5">
-        <mat-radio-group>
-          <mat-radio-button value="1">Dvosmjerna</mat-radio-button>
-          <mat-radio-button class="pl-2" value="2">Jednosmjerna</mat-radio-button>
-        </mat-radio-group>
-      </div>
       <div class="col-md-12" style="align-content: left;">
-
+        <h3><i>Pronađi let</i></h3>
         <mat-form-field>
-          <mat-label>Polazište:</mat-label>
-          <input matInput class="form-control" type="text" formControlName="polaziste" placeholder="Drzava, Grad ili Aerodrom" required >
+          <mat-label><span>&#9992;</span> Polazište:  </mat-label>
+          <input matInput class="form-control" type="text" formControlName="polaziste" placeholder="Grad ili Aerodrom" required >
+          <span style="color:red" *ngIf="form.get('polaziste').touched && form.get('polaziste').errors">Polje je obavezno!</span>
         </mat-form-field>
 
         <mat-form-field class="pl-4">
-          <mat-label style="text-align: right;">Odredište</mat-label>
-          <input matInput class="form-control" type="text" formControlName="odrediste" placeholder="Drzava, Grad ili Aerodrom" required>
+          <mat-label style="text-align: right;"><span>&#9992;</span> Odredište</mat-label>
+          <input matInput class="form-control" type="text" formControlName="odrediste" placeholder="Grad ili Aerodrom" required>
+          <span style="color:red" *ngIf="form.get('odrediste').touched && form.get('odrediste').errors">Polje je obavezno!</span>
           <!--  [ngClass]="{ 'is-invalid': submitted && form.controls.name.errors}"-->
         </mat-form-field>
       </div>
 
       <div class="col-md-12">
         <mat-form-field class="pl-4">
-          <input matInput [matDatepicker]="picker" placeholder="Datum polaska">
+          <input matInput [matDatepicker]="picker" formControlName="datumpolaska" placeholder="Datum polaska">
+          <span style="color:red" *ngIf="form.get('datumpolaska').touched && form.get('datumpolaska').errors">Polje je obavezno!</span>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
         <mat-form-field class="pl-4">
-          <input matInput [matDatepicker]="picker1" placeholder="Datum povratka">
+          <input matInput [matDatepicker]="picker1" formControlName="datumpovratka" placeholder="Datum povratka">
           <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
           <mat-datepicker #picker1></mat-datepicker>
         </mat-form-field>
       </div>
 
     <div class="col-md-12">
-          <mat-select class="form-control col-md-3" formControlName="klasa" placeholder="Izaberite klasu">
-            <mat-option value="1">Ekonomska</mat-option>
-            <mat-option value="3">Prva</mat-option>
+          <mat-select class="form-control col-md-5" formControlName="klasa" placeholder="Izaberite klasu">
+            <span style="color:red" *ngIf="form.get('klasa').touched && form.get('klasa').errors">Polje je obavezno!</span>
+            <mat-option value="Ekonomska">Ekonomska</mat-option>
+            <mat-option value="Prva">Biznis</mat-option>
           </mat-select>
+          <!--
           <mat-form-field class="pl-5">
             <input matInput class="form-control" formControlName="brOsoba" type="number" placeholder="Broj osoba" required>
           </mat-form-field>
+          -->
     </div>
 
-    <div class="col-md-7" style="margin-top: 1em;">
-      <mat-checkbox formControlName="availability">Samo direktni</mat-checkbox>
-      <mat-checkbox formControlName="availability" class="pl-2">Sa presjedanjem</mat-checkbox>
-      <mat-checkbox formControlName="availability" class="pl-2">Svi letovi</mat-checkbox>
+    <div class="col-md-12" style="margin-top: 1em;">
+      <mat-checkbox formControlName="samoDirektni">Samo direktni</mat-checkbox>
+        <mat-radio-group class="col-md-7 pl-2" formControlName="dvosmjerna">
+          <mat-radio-button value="true">Dvosmjerna</mat-radio-button>
+        </mat-radio-group>
     </div>
-    <div class="col-md-12" style="margin-left: 17em;">
+
+    <div class="col-md-12 pt-2" > <!-- style="margin-left: 17em;"-->
       <p class="ml-auto">
-      <button type="button" style="align-content: right;" class="btn btn-primary" (click)='trazi()'>Traži</button>
-    </p>
+      <button [disabled]="!form.valid" type="button" style="align-content: center; width: 60%;" class="btn btn-primary" (click)='trazi()'>Traži</button>
+      </p>
     </div>
   </div>
   </div>
@@ -63,6 +65,29 @@
 </div>
 
 </form>
-<div id="reklama">
+<div style="margin-top: 2em;"> <!--  id="reklama"-->
+<h3 style="text-align: center;"><i>Aranžmani</i></h3>
+<nav style="border:1px solid black;">
+  <div class="form-group row pl-2">
+      <div class="col-md-9" style="text-align: center; margin: auto;padding-left: 5%; padding-right: 5%;">
+      <mat-tab-group>
+        <mat-tab label="Europa" [routerLink]="" [routerLinkActive]="['active']"></mat-tab>
+        <mat-tab label="Amerika" [routerLink]="'listaPonuda'" [routerLinkActive]="['active']"></mat-tab>
+        <mat-tab label="Australija" [routerLink]="'listaPonuda'" [routerLinkActive]="['active']"></mat-tab>
+        <mat-tab label="Afrika" [routerLink]="'listaPonuda'" [routerLinkActive]="['active']"></mat-tab>
+        <mat-tab label="Arktik" [routerLink]="'listaPonuda'" [routerLinkActive]="['active']"></mat-tab>
+        <mat-tab label="Antartik" [routerLink]="'listaPonuda'" [routerLinkActive]="['active']"></mat-tab>
+      </mat-tab-group>
+      </div>
+  </div>
+</nav>
+<div style="margin-top: 1em;"   lass="col-md-9" style="text-align: center; padding-left: 5%; padding-right: 5%;">
+
+  <label><img style="margin-left: 10em; margin-top: 2em;" src="../../../assets/grcka.jpg" [routerLink]="'/'" width="181" height="279"> <br>Vec od 589 KM</label>
+  <label><img style="margin-left: 10em; margin-top: 2em;" src="../../../assets/italija.jpg" [routerLink]="'/'" width="181" height="279" ><br>Vec od 589 KM</label>
+ <label>  <img style="margin-left: 10em; margin-top: 2em;" src="../../../assets/njemacka.jpg" [routerLink]="'/'" width="181" height="279" ><br>Vec od 589 KM</label>
+
+</div>
+
 
 </div>

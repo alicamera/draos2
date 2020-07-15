@@ -1,0 +1,84 @@
+
+<!--
+<button mat-raised-button (click)="isEditable = !isEditable">
+  {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
+</button>
+linear
+-->
+
+<mat-horizontal-stepper linear #stepper style="background-image: url('./../../assets/sky.jpg');background-repeat: no-repeat;
+background-size: cover; height: 100%;">
+  <mat-step [stepControl]="firstFormGroup"  >
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Rezultati pretrage</ng-template>
+
+      <div class="">
+        <app-kartica-ponuda *ngFor="let e of letovi" [let]="e"  [infoLet]="infoLet" [placanje]="0"></app-kartica-ponuda>
+      </div>
+
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="secondFormGroup" > <!-- [editable]="isEditable"-->
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Detalji putnika</ng-template>
+      <app-putnik (getUserData)="getUserData($event)"></app-putnik>
+      <!--
+
+      <div style="text-align: center; height: 5em;">
+
+        <button mat-button matStepperPrevious style="border-radius: 15px;height: 50%;width: 5em;">Nazad</button>
+        <button mat-button matStepperNext type="button" class="button button5 col-sd-12" style="width: 5em;height: 50%; border-radius: 5px; -webkit-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);">Dalje</button>
+      </div>
+      -->
+    </form>
+  </mat-step>
+
+  <mat-step  >
+    <form [formGroup]="secondFormGroup" >
+    <ng-template matStepLabel>Servisne ponude</ng-template>
+    <app-servis-ponuda (getPutnik)="getPutnik($event)" [putnik]="this.putnik1"></app-servis-ponuda>
+  </form>
+  </mat-step>
+
+  <mat-step   >
+    <form [formGroup]="secondFormGroup">
+    <ng-template matStepLabel>Plaćanje</ng-template>
+    <app-kartica-ponuda  *ngFor="let e of letovi" [let]="e"  [infoLet]="infoLet" [placanje]="1"></app-kartica-ponuda>
+    <app-placanje  (getPlacanje)="getPlacanje($event)" [potvrda]="0" [putnik]="this.putnik1" ></app-placanje> <!-- newdata={{putnik1}}-->
+
+  </form>
+
+  </mat-step>
+
+  <mat-step>
+    <form [formGroup]="secondFormGroup" >
+    <ng-template matStepLabel>Potvrda</ng-template>
+    <app-placanje (getPlacanje)="getPlacanje($event)" [potvrda]="1" [putnik]="this.putnik1"></app-placanje>
+    <div class="row">
+      <div class="card text-center form-group col-md-10" style="border-color: black; margin-top: 1em;">
+        <div class="col-md-12" *ngIf="pokaziplacanje" >
+          <div>
+            <label style="text-align: right;font-size: medium;">Ime i prezime vlasnika kartice: </label>
+            <label style="text-align: right; font-weight: bold; font-size: medium;">{{ placanje.ime}}  {{placanje.prezime}} </label></div>
+          <div>
+            <label style="text-align: right;font-size: medium;">Adresa i poštanski broj vlasnika kartice: </label>
+            <label style="text-align: right; font-weight: bold; font-size: medium;"> {{ placanje.adresa}}  {{placanje.pbroj}} </label></div>
+          <div>
+            <label style="text-align: right;font-size: medium;">Broj kartice: </label>
+            <label style="text-align: right; font-weight: bold; font-size: medium;">  {{ placanje.brojkartice}}</label></div>
+        </div>
+    </div>
+    </div>
+    <div style="text-align: center; height: 5em;">
+      <button mat-button matStepperPrevious style="border-radius: 15px;height: 50%;width: 5em;">Nazad</button>
+      <button mat-button (click)="stepper.reset()" type="button" class="button button5 col-sd-12" style="width: 5em;height: 50%; border-radius: 5px; -webkit-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
+      -moz-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
+      box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);">Početak</button>
+
+    </div>
+  </form>
+  </mat-step>
+</mat-horizontal-stepper>

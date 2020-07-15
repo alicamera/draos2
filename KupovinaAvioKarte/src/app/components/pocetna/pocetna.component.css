@@ -26,15 +26,15 @@
 
 }
 #inner-div {
-
+  border-radius: 25px;
   display: inline-block;
-  height: 100%;
-  width: 700px;
+  height: 950%;
+  width: 35%;
   padding: 3px;
   background-color: white;
   position:relative;
-
   background-color: white;
+
   }
 #outer-div {
   display: flex;

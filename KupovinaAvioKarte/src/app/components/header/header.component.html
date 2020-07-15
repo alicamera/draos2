@@ -1,34 +1,31 @@
 <header>
   <nav style="border:1px solid black;">
-
     <div class="form-group row pl-2">
         <div class="col-md-2">
             <img src="../../../assets/rsz_logo.png" [routerLink]="'/'">
          </div>
-        <div class="col-md-6">
-        <mat-tab-group>
-          <mat-tab label="Karte" [routerLink]="'http://localhost:4200/pocetna'" [routerLinkActive]="['active']" href="http://localhost:4200/pocetna"></mat-tab>
-          <mat-tab label="Prevoz" [routerLink]="'listaPonuda'" [routerLinkActive]="['active']"></mat-tab>
-          <mat-tab label="Hoteli" [routerLink]="'pocetna'" [routerLinkActive]="['active']"></mat-tab>
-          <mat-tab label="Ostalo" [routerLink]="'pocetna'" [routerLinkActive]="['active']"></mat-tab>
-        </mat-tab-group>
+        <div class="col-md-7">
+          <nav mat-tab-nav-bar>
+            <a mat-tab-link label="Karte" [routerLink]="'/'" [active]="true">Karte</a>
+              <a mat-tab-link label="Prevoz" [routerLink]="'/'">Prevoz</a>
+                <a mat-tab-link label="Hoteli" [routerLink]="'/'">Hoteli</a>
+                  <a mat-tab-link label="Karte + Hotel" [routerLink]="'/'">Karte + Hotel</a>
+                    <a mat-tab-link label="Osiguranje" [routerLink]="'/'">Osiguranje</a>
+        </nav >
         </div>
-        <div class="col-md-2">
-          <img src="../../../assets/rsz_1bih.png" [routerLink]="'/'" class="pl-3">
-          <img src="../../../assets/rsz_uk2.png" [routerLink]="'/'" class="pl-3">
-
-        </div>
-        <div class="col-md-2">
-          <button type="button" class="btn btn-primary">Prijava</button>
-          <div class="imgDetails">
-            <a href="" >Registracija</a>
+        <div class="col-md-1">
+          <!--
+            <button type="button" class="btn btn-primary">Prijava</button>
+          -->
+          <div style="display: block; text-align: left;">
+            <img  src="../../../assets/rsz_1bih.png" [routerLink]="'/'" class="pl-3" width="40px">
+            <img  src="../../../assets/rsz_uk2.png" [routerLink]="'/'" class="pl-3" width="40px">
+          </div >
+          <div style="text-align:left;" >
+            <p style="width:100%; text-decoration: underline; color:blue; padding-left: 1em;" href="" >Prijava</p>
           </div>
-
         </div>
 
       </div>
-
-
-
   </nav>
 </header>

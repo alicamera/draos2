@@ -34,4 +34,12 @@
 .imgDetails p {
   position: absolute;
   bottom: 0;
+  text-align:center;
+  }
+
+  .img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
   }

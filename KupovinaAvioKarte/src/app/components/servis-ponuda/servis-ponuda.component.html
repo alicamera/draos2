@@ -1,0 +1,270 @@
+<form [formGroup]="form">
+  <div class="row">
+    <div class="card text-center form-group col-md-7" style="border-color: black; margin-top: 1em; margin-left: auto;
+    margin-right: auto;">
+      <div class="col-lg-12 col-xs-12" id="propertiesList">
+      <div class="col-md-12">
+        <h4><img  src="../../../assets/podrska.png" width="30px" height="30px"><i>Paketi podrške </i></h4>
+      </div>
+      <div class="col-md-12" style="margin-top: 1em">
+       <table style="text-align: right;">
+         <tr>
+          <th></th>
+          <th>Osnovni</th>
+          <th>Premium</th>
+          <th>Platinum</th>
+         </tr>
+
+         <tr>
+          <td><label>Brz odgovor</label> </td>
+          <td style="text-align: center;"><span>&#8211;</span></td>
+          <td style="text-align: center;"><span>&#10003;</span></td>
+          <td style="text-align: center;"><span>&#10003;</span></td>
+        </tr>
+
+        <tr>
+          <td><label>Informacije o rezervaciji preko SMS-a</label></td>
+          <td style="text-align: center;"><span>&#8211;</span></td>
+          <td style="text-align: center;"><span>&#10003;</span></td>
+          <td style="text-align: center;"><span>&#10003;</span></td>
+        </tr>
+
+        <tr>
+          <td><label>Informacije o letu preko SMS-a</label> </td>
+          <td style="text-align: center;"><span>&#8211;</span></td>
+          <td style="text-align: center;"><span>&#10003;</span></td>
+          <td style="text-align: center;"><span>&#10003;</span></td>
+        </tr>
+
+        <tr>
+          <td><label>Brz povrat novca </label></td>
+          <td style="text-align: center;"><span>&#8211;</span></td>
+          <td style="text-align: center;"><span>&#8211;</span></td>
+          <td style="text-align: center;"><span>&#10003;</span></td>
+        </tr>
+
+
+        <tr>
+          <td><label>Besplatna administracija </label> </td>
+          <td style="text-align: center;"><label>20 KM</label></td>
+          <td style="text-align: center;"><span>&#8211;</span></td>
+          <td style="text-align: center;"><span>&#10003;</span></td>
+        </tr>
+
+        <tr>
+          <td><label>Ukupno po osobi</label></td>
+          <td style="text-align: center; font-weight: bold;"><label>0 KM</label></td>
+          <td style="text-align: center; font-weight: bold;"><span>30 KM</span></td>
+          <td style="text-align: center; font-weight: bold;"><span>50 KM</span></td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td><button (click)="osnovni()" type="button" class="button button5 col-sd-12" style="width: 5em;height: 50%; border-radius: 5px; -webkit-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
+            box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);" >Izaberi</button></td>
+          <td><button (click)="premium()" type="button" class="button button5 col-sd-12" style="width: 5em;height: 50%; border-radius: 5px; -webkit-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
+            box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);"  >Izaberi</button></td>
+          <td><button (click)="platinum()" type="button" class="button button5 col-sd-12" style="width: 5em;height: 50%; border-radius: 5px; -webkit-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
+            box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);" >Izaberi</button></td>
+        </tr>
+
+       </table>
+    </div>
+    </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="card text-center form-group col-md-7" style="border-color: black; margin-top: 1em; margin-left: auto;
+    margin-right: auto;">
+      <div class="col-lg-12 col-xs-12" id="propertiesList">
+      <div class="col-md-12">
+        <h4><img  src="../../../assets/return.jpg" width="30px" height="30px"><i>Zaštita od otkazivanja</i></h4>
+      </div>
+      <div class="col-md-6" style="margin-top: 1em">
+        <label style="text-align: left;">Zaštita od otkaza garancija je povrata novca čak i ako otkažete putovanje do dva sata prije polaska.</label>
+      </div>
+      <div>
+        <label>Za odraslu osobu <i>22 KM</i></label>
+      </div>
+      <div>
+        <label>Za djecu (2-11) <i>20 KM</i></label>
+      </div>
+      <div>
+        <mat-radio-group class="col-md-7 pl-2" formControlName="zastita" required>
+          <mat-radio-button (click)="zastita($event)"  value="true">DA</mat-radio-button>
+           <label>  </label>
+          <mat-radio-button (click)="zastitaNE($event)"  value="false">NE</mat-radio-button>
+        </mat-radio-group>
+        <span style="color:red" *ngIf="form.get('zastita').touched && form.get('zastita').errors">Polje je obavezno!</span>
+      </div>
+
+    </div>
+    </div>
+    </div>
+
+
+  <div class="row">
+    <div class="card text-center form-group col-md-7" style="border-color: black; margin-top: 1em; margin-left: auto;
+    margin-right: auto;">
+      <div class="col-lg-12 col-xs-12" id="propertiesList">
+      <div class="col-md-12">
+        <h4><img  src="../../../assets/shield.png" width="30px" height="30px"><i>Putno osiguranje</i></h4>
+      </div>
+
+      <div class="col-md-6" style="margin-top: 1em; text-align: left;">
+        <label>Pogodnosti osiguranja:</label>
+        <li>24 sata hitne medicinske pomoći</li>
+        <li>Naknada za kašnjenje u putovanju</li>
+        <li>Naknada za odloženu prtljagu</li>
+        <li>Ukradene ili izgubljene putne isprave</li>
+        <li>Lična odgovornost</li>
+        <li>Za jednosmjerne letove pokrivanje traje 14 dana od polaska.</li>
+        </div>
+      <div>
+        <label>Za odraslu osobu <i>79 KM</i></label>
+      </div>
+      <div>
+        <label>Za djecu (2-11) <i>77 KM</i></label>
+      </div>
+      <div>
+        <mat-radio-group class="col-md-7 pl-2" formControlName="putno" required>
+          <mat-radio-button (click)="putno($event)"  value="true">DA</mat-radio-button>
+           <label>  </label>
+          <mat-radio-button (click)="putnoNE($event)" value="false">NE</mat-radio-button>
+        </mat-radio-group>
+        <span style="color:red" *ngIf="form.get('putno').touched && form.get('putno').errors">Polje je obavezno!</span>
+      </div>
+
+    </div>
+    </div>
+    </div>
+
+
+  <div class="row">
+    <div class="card text-center form-group col-md-7" style="border-color: black; margin-top: 1em; margin-left: auto;
+    margin-right: auto;">
+      <div class="col-lg-12 col-xs-12" id="propertiesList">
+      <div class="col-md-12">
+        <h4><img  src="../../../assets/kofer.png" width="30px" height="30px"><i>Zaštita prtljaga</i></h4>
+      </div>
+      <div class="col-md-6" style="margin-top: 1em; text-align: left;">
+        <label>Ako kupite naše osiguranje za prtljagu, nadoknadit ćemo vam prtljagu koja kasni 2 sata ili više, a pokriveni ste gubitkom ili krađom vašeg prtljaga.</label>
+      </div>
+      <div>
+        <label>Za odraslu osobu <i>22 KM</i></label>
+      </div>
+      <div>
+        <label>Za djecu (2-11) <i>20 KM</i></label>
+      </div>
+      <div>
+        <mat-radio-group class="col-md-7 pl-2" formControlName="prtljag" required>
+          <mat-radio-button (click)="prtljag()" value="true">DA</mat-radio-button>
+           <label>  </label>
+          <mat-radio-button  (click)="prtljagNE()" value="false">NE</mat-radio-button>
+        </mat-radio-group>
+        <span style="color:red" *ngIf="form.get('prtljag').touched && form.get('prtljag').errors">Polje je obavezno!</span>
+      </div>
+
+    </div>
+    </div>
+    </div>
+
+
+    <div class="row">
+      <div class="card text-center form-group col-md-7" style="border-color: black; margin-top: 1em; margin-left: auto;
+      margin-right: auto;">
+        <div class="col-lg-12 col-xs-12" id="propertiesList">
+        <div class="col-md-12">
+          <h4><img  src="../../../assets/delay.jpg" width="30px" height="30px"><i>Kompenzacija za kašnjenje leta</i></h4>
+        </div>
+        <div class="col-md-6" style="margin-top: 1em; text-align: left;">
+         <li>Naknada: do 500 KM za kašnjenje ili otkaze leta</li>
+         <li>Bez napora: trenutna obavijesti o vašim pravima kada let bude odgođen</li>
+         <li>Lako: Bez stresa ili dodatnih naknada</li>
+        </div>
+        <div>
+          <label></label>
+          <label>Za odraslu osobu <i>32 KM</i></label>
+        </div>
+        <div>
+          <label>Za djecu (2-11) <i>30 KM</i></label>
+        </div>
+        <div>
+          <mat-radio-group class="col-md-7 pl-2" formControlName="kasnjenje" required>
+            <mat-radio-button  (click)="kasnjenje()"  value="true">DA</mat-radio-button>
+             <label>  </label>
+            <mat-radio-button  (click)="kasnjenjeNE()"  value="false">NE</mat-radio-button>
+          </mat-radio-group>
+          <span style="color:red" *ngIf="form.get('kasnjenje').touched && form.get('kasnjenje').errors">Polje je obavezno!</span>
+        </div>
+
+      </div>
+      </div>
+      </div>
+
+      <div class="row">
+        <div class="card text-center form-group col-md-7" style="border-color: black; margin-top: 1em; margin-left: auto;
+        margin-right: auto;">
+          <div class="col-lg-12 col-xs-12" id="propertiesList">
+          <div class="col-md-12">
+            <h4><img  src="../../../assets/phone.jpg" width="30px" height="30px"><i>Referenca za rezervaciju putem SMS-a</i></h4>
+          </div>
+          <div class="col-md-6" style="margin-top: 1em; text-align: left;">
+           <label >Naručite referencu za rezervaciju kao SMS. Jednostavan način da uvijek imate na raspolaganju svoj broj za rezervaciju.</label>
+          </div>
+          <div>
+            <label>Po rezervaciji <i>22 KM</i></label>
+          </div>
+          <div>
+            <mat-radio-group class="col-md-7 pl-2" formControlName="rezervacija" required>
+              <mat-radio-button (click)="rezervacija()" value="true">DA</mat-radio-button>
+               <label>  </label>
+              <mat-radio-button (click)="rezervacijaNE()" value="false">NE</mat-radio-button>
+            </mat-radio-group>
+            <span style="color:red" *ngIf="form.get('rezervacija').touched && form.get('rezervacija').errors">Polje je obavezno!</span>
+          </div>
+
+        </div>
+        </div>
+        </div>
+
+
+      <div class="row">
+        <div class="card text-center form-group col-md-7" style="border-color: black; margin-top: 1em; margin-left: auto;
+        margin-right: auto;">
+          <div class="col-lg-12 col-xs-12" id="propertiesList">
+          <div class="col-md-12">
+            <h4><img  src="../../../assets/phone.jpg" width="30px" height="30px"><i>Mobilni putni plan </i></h4>
+          </div>
+          <div class="col-md-6" style="margin-top: 1em; text-align: left;">
+           <label>Odaberite Mobilni plan putovanja i pribavite sve ključne informacije o putovanju izravno na telefon. Primat ćete i obavijesti o promjenama kapija ili voznog reda</label>
+          </div>
+          <div>
+            <label>Po rezervaciji <i>22 KM</i></label>
+          </div>
+          <div>
+            <mat-radio-group class="col-md-7 pl-2" formControlName="plan" required>
+              <mat-radio-button  (click)="plan()" value="true">DA</mat-radio-button>
+               <label>  </label>
+              <mat-radio-button  (click)="planNE()" value="true">NE</mat-radio-button>
+            </mat-radio-group>
+            <span style="color:red" *ngIf="form.get('plan').touched && form.get('plan').errors">Polje je obavezno!</span>
+          </div>
+
+        </div>
+        </div>
+        </div>
+        <div style="text-align: center; height: 5em;">
+
+          <button mat-button matStepperPrevious style="border-radius: 15px;height: 50%;width: 5em;">Nazad</button>
+          <button [disabled]="!form.valid" (click)="servis()" mat-button matStepperNext type="button" class="button button5 col-sd-12" style="width: 5em;height: 50%; border-radius: 5px; -webkit-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
+          -moz-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
+          box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);">Dalje</button>
+        </div>
+
+<form>

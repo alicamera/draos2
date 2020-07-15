@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTabsModule} from '@angular/material/tabs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,9 @@ import {MatTabsModule} from '@angular/material/tabs';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) {
+
+   }
 
   ngOnInit() {
   }
