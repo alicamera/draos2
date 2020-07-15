@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start": "node server.js"
   },
   "private": true,
   "dependencies": {
@@ -31,7 +32,8 @@
     "bootstrap": "^4.4.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "@angular/cli": "~8.3.22"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.22",
@@ -53,5 +55,9 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
+  },
+  "engines": {
+    "node": "6.11.1",
+    "npm": "3.10.9"
   }
 }
