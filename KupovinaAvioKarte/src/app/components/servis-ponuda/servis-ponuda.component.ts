@@ -86,41 +86,41 @@ putno(event:any) {
     }
 
 
-prtljag(event:any) {
+prtljag() {
   if(this.paket.has("Zaštita prtljaga")==false)
   this.paket.set("Zaštita prtljaga", "22 KM");
   console.log(this.paket);
   }
-  prtljagNE(event:any) {
+  prtljagNE() {
     this.paket.delete("Zaštita prtljaga");
     console.log(this.paket);
     }
 
-kasnjenje(event:any) {
+kasnjenje() {
   if(this.paket.has("Kompenzacija za kašnjenje leta")==false)
   this.paket.set("Kompenzacija za kašnjenje leta", "32 KM");
   console.log(this.paket);
   }
-  kasnjenjeNE(event:any) {
+  kasnjenjeNE() {
     this.paket.delete("Kompenzacija za kašnjenje leta");
     console.log(this.paket);
     }
 
-rezervacija(event:any) {
+rezervacija() {
   if(this.paket.has("Referenca za rezervaciju putem SMS-a")==false)
   this.paket.set("Referenca za rezervaciju putem SMS-a", "22 KM");
   console.log(this.paket);
   }
-  rezervacijaNE(event:any) {
+  rezervacijaNE() {
     this.paket.delete("Referenca za rezervaciju putem SMS-a");
     console.log(this.paket);
     }
-    plan(event:any) {
+    plan() {
       if(this.paket.has("Mobilni putni plan")==false)
       this.paket.set("Mobilni putni plan", "22 KM");
       console.log(this.paket);
       }
-      planNE(event:any) {
+      planNE() {
         this.paket.delete("Mobilni putni plan");
         console.log(this.paket);
         }

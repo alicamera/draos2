@@ -20,7 +20,7 @@ export class PlacanjeComponent implements OnInit {
   }
   @Input() public potvrda: string;
  // @Input() public putnik: Putnik;
-  private _putnik: Putnik;
+  public _putnik: Putnik;
 
   @Input()
   set putnik(putnik: Putnik) {
