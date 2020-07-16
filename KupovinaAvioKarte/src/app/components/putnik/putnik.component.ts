@@ -21,14 +21,14 @@ export class PutnikComponent implements OnInit {
 
   ngOnInit() {
     this.secondFormGroup = this.formBuilder.group({
-      email: ['', Validators.required, Validators.pattern("/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/")],
-      potvrdiemail: ['', Validators.required, ,Validators.pattern("/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/")],
-      drzava: ['', Validators.required, Validators.pattern("[a-zA-Z]{2,}")],
-      broj:  ['', Validators.required, Validators.pattern("\(([0-9]{2}|0{1}((x|[0-9]){2}[0-9]{2}))\)\s*[0-9]{3,4}[- ]*[0-9]{4}")],
+      email: ['',Validators.compose([Validators.required, Validators.pattern("^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$")])],
+      potvrdiemail: ['', Validators.compose([Validators.required, Validators.pattern("^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$")])],
+      drzava: ['', Validators.required],
+      broj:  ['',Validators.compose([ Validators.required, Validators.pattern("^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$")])],
       //brOsoba:  ['', Validators.required],
       saglasnost: [''],
-      ime: ['', Validators.required, Validators.pattern("/^[a-z ,.'-]+$/i")],
-      prezime: ['', Validators.required, Validators.pattern("/^[a-z ,.'-]+$/i")],
+      ime: ['', Validators.compose([Validators.required])],
+      prezime: ['',  Validators.compose([Validators.required])], //, Validators.pattern("^[a-z ,.'-]+$")
       mr: ['', Validators.required],
       //mrs: ['', Validators.required],
       prijava: ['', Validators.required],

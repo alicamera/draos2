@@ -79,17 +79,17 @@ ngOnChanges(changes: SimpleChanges): void {
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      email: ['', Validators.required],
-      potvrdiemail: ['', Validators.required],
-      grad: ['', Validators.required,  Validators.pattern("^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$")],
+      //email: ['', Validators.required],
+      //potvrdiemail: ['', Validators.required],
+      grad: ['', Validators.compose([Validators.required,  Validators.pattern("^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$")])],
       pbroj:  ['', Validators.required],
       //brOsoba:  ['', Validators.required],
-      adresa: ['', Validators.required, Validators.pattern("\d{1,5}\s\w.\s(\b\w*\b\s){1,2}\w*\.")],
-      ime: ['', Validators.required, Validators.pattern("/^[a-z ,.'-]+$/i")],
-      prezime: ['', Validators.required, Validators.pattern("/^[a-z ,.'-]+$/i")],
-      kbroj: ['', Validators.required,  Validators.pattern("^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$")],
-      datumIsteka: ['', Validators.required,  Validators.pattern("/^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/")],
-      kod: ['', Validators.required,  Validators.pattern("^[0-9]{3, 4}$")],
+      adresa: ['', Validators.compose([Validators.required])],//, Validators.pattern("[#.0-9a-zA-Z\s,-]+$")
+      ime: ['', Validators.compose([ Validators.required])],
+      prezime: ['', Validators.compose([ Validators.required])],// Validators.pattern("/^[a-z ,.'-]+$/i")
+      kbroj: ['', Validators.compose([Validators.required,  Validators.pattern("^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$")])],
+      datumIsteka: ['',Validators.required],
+      kod: ['',Validators.compose([ Validators.required,  Validators.pattern("^[0-9]{3,4}$")])],
     });
 
   }

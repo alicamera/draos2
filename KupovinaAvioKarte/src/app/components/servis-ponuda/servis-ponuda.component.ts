@@ -32,10 +32,10 @@ export class ServisPonudaComponent implements OnInit {
       //brOsoba:  ['', Validators.required],
       rezervacija: ['', Validators.required],
       plan: ['', Validators.required],
-      prezime: ['', Validators.required],
-      mr: ['', Validators.required],
-      mrs: ['', Validators.required],
-      DA: ['', Validators.required],
+      //prezime: ['', Validators.required],
+      //mr: ['', Validators.required],
+     // mrs: ['', Validators.required],
+      //DA: ['', Validators.required],
     });
   }
 

@@ -8,12 +8,12 @@
     </div>
     <div class="col-md-6" style="margin-top: 1em">
       <input matInput class="form-control" type="email" formControlName="email" placeholder="E-mail" required >
-      <span style="color:red" *ngIf="secondFormGroup.get('email').touched && secondFormGroup.get('email').errors">Polje je obavezno!</span>
+      <span style="color:red" *ngIf="secondFormGroup.get('email').touched && secondFormGroup.get('email').errors">Polje nije adekvatno popounjeno!</span>
     </div>
 
     <div class="col-md-6" style="margin-top: 1em">
       <input (onchange)="potvrdaEmaila($event)" matInput class="form-control" type="email" formControlName="potvrdiemail" placeholder="Potvrda E-mail" required >
-      <span style="color:red" *ngIf="secondFormGroup.get('potvrdiemail').touched && secondFormGroup.get('potvrdiemail').errors">Polje je obavezno!</span>
+      <span style="color:red" *ngIf="secondFormGroup.get('potvrdiemail').touched && secondFormGroup.get('potvrdiemail').errors">Polje nije adekvatno popounjeno!</span>
     </div>
 
     <div class="col-md-6" style="margin-top: 1em">
@@ -23,12 +23,12 @@
         <mat-option value="GER">Njemačka</mat-option>
         <mat-option value="SLO">Slovenija</mat-option>
       </mat-select>
-      <span style="color:red" *ngIf="secondFormGroup.get('drzava').touched && secondFormGroup.get('drzava').errors">Polje je obavezno!</span>
+      <span style="color:red" *ngIf="secondFormGroup.get('drzava').touched && secondFormGroup.get('drzava').errors">Polje nije adekvatno popounjeno!</span>
     </div>
 
     <div class="col-md-6" style="margin-top: 1em">
       <input matInput class="form-control" type="text" formControlName="broj" placeholder="Broj telefona" required >
-      <span style="color:red" *ngIf="secondFormGroup.get('broj').touched && secondFormGroup.get('broj').errors">Polje je obavezno!</span>
+      <span style="color:red" *ngIf="secondFormGroup.get('broj').touched && secondFormGroup.get('broj').errors">Polje nije adekvatno popounjeno!</span>
    </div>
 
     <div class="col-md-12" style="margin-top: 1em">
@@ -50,10 +50,10 @@
       </div>
       <div class="col-md-6" style="margin-top: 1em">
         <mat-radio-group class="col-md-7 pl-2" formControlName="mr" required>
-          <mat-radio-button value="true">Mr</mat-radio-button>
-          <mat-radio-button value="true">Mrs/Ms</mat-radio-button>
+          <mat-radio-button value="mr">Mr</mat-radio-button>
+          <mat-radio-button value="mrs/ms">Mrs/Ms</mat-radio-button>
         </mat-radio-group>
-        <span style="color:red" *ngIf="secondFormGroup.get('mr').touched && secondFormGroup.get('mr').errors">Polje je obavezno!</span>
+        <span style="color:red" *ngIf="secondFormGroup.get('mr').touched && secondFormGroup.get('mr').errors">Polje nije adekvatno popounjeno!</span>
 
         <!--
         <mat-radio-group class="col-md-7 pl-2" formControlName="mrs">
@@ -64,12 +64,12 @@
 
       <div class="col-md-6" style="margin-top: 1em">
         <input matInput class="form-control" type="text" formControlName="ime" placeholder="Ime" required >
-        <span style="color:red" *ngIf="secondFormGroup.get('ime').touched && secondFormGroup.get('ime').errors">Polje je obavezno!</span>
+        <span style="color:red" *ngIf="secondFormGroup.get('ime').touched && secondFormGroup.get('ime').errors">Polje nije adekvatno popounjeno!</span>
       </div>
 
       <div class="col-md-6" style="margin-top: 1em; margin-bottom: 1em">
         <input matInput class="form-control" type="text" formControlName="prezime" placeholder="Prezime" required >
-        <span style="color:red" *ngIf="secondFormGroup.get('prezime').touched && secondFormGroup.get('prezime').errors">Polje je obavezno!</span>
+        <span style="color:red" *ngIf="secondFormGroup.get('prezime').touched && secondFormGroup.get('prezime').errors">Polje nije adekvatno popounjeno!</span>
       </div>
     </div>
     </div>
@@ -96,7 +96,7 @@
                 <label>  </label>
                <mat-radio-button (click)="prijavaNE($event)" value="false">NE</mat-radio-button>
              </mat-radio-group>
-             <span style="color:red" *ngIf="secondFormGroup.get('prijava').touched && secondFormGroup.get('prijava').errors">Polje je obavezno!</span>
+             <span style="color:red" *ngIf="secondFormGroup.get('prijava').touched && secondFormGroup.get('prijava').errors">Polje nije adekvatno popounjeno!</span>
           </div>
         </div>
       </div>
@@ -128,7 +128,7 @@
                   <label><br>  </label>
                  <mat-radio-button (click)="izgubljenoNE($event)" value="false">NE</mat-radio-button>
                </mat-radio-group>
-               <span style="color:red" *ngIf="secondFormGroup.get('izgubljen').touched && secondFormGroup.get('izgubljen').errors">Polje je obavezno!</span>
+               <span style="color:red" *ngIf="secondFormGroup.get('izgubljen').touched && secondFormGroup.get('izgubljen').errors">Polje nije adekvatno popounjeno!</span>
            </div>
           </div>
         </div>
@@ -195,23 +195,28 @@
                     <label><br>  </label>
                    <mat-radio-button (click)="fleksibilnaNE($event)" value="false">NE</mat-radio-button>
                  </mat-radio-group>
-                 <span style="color:red" *ngIf="secondFormGroup.get('karta').touched && secondFormGroup.get('karta').errors">Polje je obavezno!</span>
+                 <span style="color:red" *ngIf="secondFormGroup.get('karta').touched && secondFormGroup.get('karta').errors">Polje nije adekvatno popounjeno!</span>
                </div>
             </div>
           </div>
           </div>
           </div>
           <!--  [disabled]="!form.valid"
-            (click)="pom()"
+ (click)="pom()"
+
 
           -->
 
       <div style="text-align: center; height: 5em;">
-        <button mat-button matStepperPrevious style="border-radius: 15px;height: 50%;width: 5em;">Nazad</button>
+        <button   mat-button matStepperPrevious style="border-radius: 15px;height: 50%;width: 5em;">Nazad</button>
         <button  [disabled]="!secondFormGroup.valid" (click)="putnik()" mat-button matStepperNext type="button" class="button button5 col-sd-12" style="width: 5em;height: 50%; border-radius: 5px; -webkit-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
         -moz-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
         box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);">Dalje</button>
+        <p>
+          <span style="color:red; font-size: small;" *ngIf="!secondFormGroup.valid">Molimo Vas da adekvatno popunite sva polja!</span>
+        </p>
       </div>
+
 
 </form>
 

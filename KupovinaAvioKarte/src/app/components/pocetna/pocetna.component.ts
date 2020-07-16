@@ -16,7 +16,7 @@ export class PocetnaComponent implements OnInit {
   vratiLetove: Array<Letovi> =[];
   infoLet: InfoLet;
   aerodrom: Array<string> = [];
-
+  sakrij: boolean=true;
 
   constructor(private formBuilder: FormBuilder, private router: Router, private letService: LetService) { }
 
@@ -25,10 +25,10 @@ export class PocetnaComponent implements OnInit {
       polaziste: ['', Validators.required],
       odrediste: ['', Validators.required],
       klasa: ['', Validators.required],
-      samoDirektni:  ['', Validators.required],
+      samoDirektni:  [''],
       // brOsoba:  ['', Validators.required],
-      dvosmjerna: ['', Validators.required],
-      jednosmjerna: ['', Validators.required],
+      dvosmjerna: [''],
+      jednosmjerna: [''],
       datumpolaska: ['', Validators.required],
       datumpovratka: ['', Validators.required],
 
@@ -47,8 +47,6 @@ export class PocetnaComponent implements OnInit {
 
   console.log('vratila se iz servisa');
   console.log(this.vratiLetove);
-
-
   this.router.navigate(['listaPonuda']);
   }
   ngOnDestroy(): void {

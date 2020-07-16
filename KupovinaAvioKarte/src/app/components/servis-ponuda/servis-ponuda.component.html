@@ -100,7 +100,7 @@
            <label>  </label>
           <mat-radio-button (click)="zastitaNE($event)"  value="false">NE</mat-radio-button>
         </mat-radio-group>
-        <span style="color:red" *ngIf="form.get('zastita').touched && form.get('zastita').errors">Polje je obavezno!</span>
+        <span style="color:red" *ngIf="form.get('zastita').touched && form.get('zastita').errors">Polje nije adekvatno popounjeno!</span>
       </div>
 
     </div>
@@ -137,7 +137,7 @@
            <label>  </label>
           <mat-radio-button (click)="putnoNE($event)" value="false">NE</mat-radio-button>
         </mat-radio-group>
-        <span style="color:red" *ngIf="form.get('putno').touched && form.get('putno').errors">Polje je obavezno!</span>
+        <span style="color:red" *ngIf="form.get('putno').touched && form.get('putno').errors">Polje nije adekvatno popounjeno!</span>
       </div>
 
     </div>
@@ -167,7 +167,7 @@
            <label>  </label>
           <mat-radio-button  (click)="prtljagNE()" value="false">NE</mat-radio-button>
         </mat-radio-group>
-        <span style="color:red" *ngIf="form.get('prtljag').touched && form.get('prtljag').errors">Polje je obavezno!</span>
+        <span style="color:red" *ngIf="form.get('prtljag').touched && form.get('prtljag').errors">Polje nije adekvatno popounjeno!</span>
       </div>
 
     </div>
@@ -200,7 +200,7 @@
              <label>  </label>
             <mat-radio-button  (click)="kasnjenjeNE()"  value="false">NE</mat-radio-button>
           </mat-radio-group>
-          <span style="color:red" *ngIf="form.get('kasnjenje').touched && form.get('kasnjenje').errors">Polje je obavezno!</span>
+          <span style="color:red" *ngIf="form.get('kasnjenje').touched && form.get('kasnjenje').errors">Polje nije adekvatno popounjeno!</span>
         </div>
 
       </div>
@@ -226,7 +226,7 @@
                <label>  </label>
               <mat-radio-button (click)="rezervacijaNE()" value="false">NE</mat-radio-button>
             </mat-radio-group>
-            <span style="color:red" *ngIf="form.get('rezervacija').touched && form.get('rezervacija').errors">Polje je obavezno!</span>
+            <span style="color:red" *ngIf="form.get('rezervacija').touched && form.get('rezervacija').errors">Polje nije adekvatno popounjeno!</span>
           </div>
 
         </div>
@@ -253,7 +253,7 @@
                <label>  </label>
               <mat-radio-button  (click)="planNE()" value="true">NE</mat-radio-button>
             </mat-radio-group>
-            <span style="color:red" *ngIf="form.get('plan').touched && form.get('plan').errors">Polje je obavezno!</span>
+            <span style="color:red" *ngIf="form.get('plan').touched && form.get('plan').errors">Polje nije adekvatno popounjeno!</span>
           </div>
 
         </div>
@@ -265,6 +265,10 @@
           <button [disabled]="!form.valid" (click)="servis()" mat-button matStepperNext type="button" class="button button5 col-sd-12" style="width: 5em;height: 50%; border-radius: 5px; -webkit-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
           -moz-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
           box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);">Dalje</button>
+          <p>
+            <span style="color:red; font-size: small;" *ngIf="!form.valid">Molimo Vas da adekvatno popunite sva polja!</span>
+          </p>
         </div>
+
 
 <form>

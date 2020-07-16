@@ -22,7 +22,7 @@
       <div class="col-md-12">
         <mat-form-field class="pl-4">
           <input matInput [matDatepicker]="picker" formControlName="datumpolaska" placeholder="Datum polaska">
-          <span style="color:red" *ngIf="form.get('datumpolaska').touched && form.get('datumpolaska').errors">Polje je obavezno!</span>
+          <span style="color:red" *ngIf="form.get('datumpolaska').touched && form.get('datumpolaska').errors">Polje nije adekvatno popounjeno!</span>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
@@ -36,7 +36,7 @@
 
     <div class="col-md-12">
           <mat-select class="form-control col-md-5" formControlName="klasa" placeholder="Izaberite klasu">
-            <span style="color:red" *ngIf="form.get('klasa').touched && form.get('klasa').errors">Polje je obavezno!</span>
+            <span style="color:red" *ngIf="form.get('klasa').touched && form.get('klasa').errors">Polje nije adekvatno popounjeno!</span>
             <mat-option value="Ekonomska">Ekonomska</mat-option>
             <mat-option value="Prva">Biznis</mat-option>
           </mat-select>
@@ -57,7 +57,10 @@
     <div class="col-md-12 pt-2" > <!-- style="margin-left: 17em;"-->
       <p class="ml-auto">
       <button [disabled]="!form.valid" type="button" style="align-content: center; width: 60%;" class="btn btn-primary" (click)='trazi()'>Traži</button>
-      </p>
+       </p>
+    <p>
+      <span style="color:red; font-size: small;" *ngIf="!form.valid">Molimo Vas da adekvatno popunite sva polja!</span>
+    </p>
     </div>
   </div>
   </div>

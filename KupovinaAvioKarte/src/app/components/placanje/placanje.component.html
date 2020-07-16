@@ -56,23 +56,23 @@
          <div class="col-md-12" style="margin-top: 1em; text-align: left;">
           <label>Ime vlasnika kartice:</label>
           <input matInput class="form-control" type="text" formControlName="ime" placeholder="Ime" required >
-          <span style="color:red" *ngIf="form.get('ime').touched && form.get('ime').errors">Polje je obavezno!</span>
+          <span style="color:red" *ngIf="form.get('ime').touched && form.get('ime').errors">Polje nije adekvatno popounjeno!</span>
 
           <label>Prezime vlasnika kartice:</label>
           <input matInput class="form-control" type="text" formControlName="prezime" placeholder="Prezime" required >
-          <span style="color:red" *ngIf="form.get('prezime').touched && form.get('prezime').errors">Polje je obavezno!</span>
+          <span style="color:red" *ngIf="form.get('prezime').touched && form.get('prezime').errors">Polje nije adekvatno popounjeno!</span>
 
           <label>Adresa vlasnika kartice:</label>
           <input matInput class="form-control" type="text" formControlName="adresa" placeholder="Adresa" required >
-          <span style="color:red" *ngIf="form.get('adresa').touched && form.get('adresa').errors">Polje je obavezno!</span>
+          <span style="color:red" *ngIf="form.get('adresa').touched && form.get('adresa').errors">Polje nije adekvatno popounjeno!</span>
 
           <label>Poštanski broj vlasnika kartice:</label>
           <input matInput class="form-control" type="text" formControlName="pbroj" placeholder="Poštanski broj" required >
-          <span style="color:red" *ngIf="form.get('pbroj').touched && form.get('pbroj').errors">Polje je obavezno!</span>
+          <span style="color:red" *ngIf="form.get('pbroj').touched && form.get('pbroj').errors">Polje nije adekvatno popounjeno!</span>
 
           <label>Grad vlasnika kartice:</label>
           <input matInput class="form-control" type="text" formControlName="grad" placeholder="Grad" required >
-          <span style="color:red" *ngIf="form.get('grad').touched && form.get('grad').errors">Polje je obavezno!</span>
+          <span style="color:red" *ngIf="form.get('grad').touched && form.get('grad').errors">Polje nije adekvatno popounjeno!</span>
 
         </div>
        </div>
@@ -91,17 +91,17 @@
         </div>
         <div class="col-md-6" style="margin-top: 1em; margin-bottom: 1em">
           <input matInput class="form-control" type="text" formControlName="kbroj" placeholder="Broj kartice" required >
-          <span style="color:red" *ngIf="form.get('kbroj').touched && form.get('kbroj').errors">Polje je obavezno!</span>
+          <span style="color:red" *ngIf="form.get('kbroj').touched && form.get('kbroj').errors">Polje nije adekvatno popounjeno!</span>
 
           <mat-form-field class="pl-4">
             <input matInput [matDatepicker]="picker1" formControlName="datumIsteka" placeholder="Datum isteka kartice">
             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker #picker1></mat-datepicker>
           </mat-form-field>
-          <span style="color:red" *ngIf="form.get('datumIsteka').touched && form.get('datumIsteka').errors">Polje je obavezno!</span>
+          <span style="color:red" *ngIf="form.get('datumIsteka').touched && form.get('datumIsteka').errors">Polje nije adekvatno popounjeno!</span>
 
           <input matInput class="form-control" type="text" formControlName="kod" placeholder="CVV kod" required >
-          <span style="color:red" *ngIf="form.get('kod').touched && form.get('kod').errors">Polje je obavezno!</span>
+          <span style="color:red" *ngIf="form.get('kod').touched && form.get('kod').errors">Polje nije adekvatno popounjeno!</span>
 
         </div>
 
@@ -118,6 +118,9 @@
   <button [disabled]="!form.valid" (click)="dalje()" mat-button matStepperNext type="button" class="button button5 col-sd-12" style="width: 5em;height: 50%; border-radius: 5px; -webkit-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
   box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);">Dalje</button>
+  <p>
+    <span style="color:red; font-size: small;" *ngIf="!form.valid">Molimo Vas da adekvatno popunite sva polja!</span>
+  </p>
 </div>
 </form>
 </div>
