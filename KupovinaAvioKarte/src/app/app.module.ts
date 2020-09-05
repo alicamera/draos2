@@ -22,6 +22,8 @@ import { PonudaComponent } from './components/ponuda/ponuda.component';
 import { PutnikComponent } from './components/putnik/putnik.component';
 import { ServisPonudaComponent } from './components/servis-ponuda/servis-ponuda.component';
 import { PlacanjeComponent } from './components/placanje/placanje.component';
+import { HttpClientModule  } from '@angular/common/http'; 
+
 
 
 @NgModule({
@@ -55,7 +57,8 @@ import { PlacanjeComponent } from './components/placanje/placanje.component';
     MatRadioModule,
     MatSliderModule,
     FontAwesomeModule,
-    MatStepperModule
+    MatStepperModule,
+    HttpClientModule 
 
   ],
   providers: [],

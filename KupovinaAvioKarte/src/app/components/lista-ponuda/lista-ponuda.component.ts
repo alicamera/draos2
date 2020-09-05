@@ -45,7 +45,7 @@ export class ListaPonudaComponent implements OnInit {
     this.aerodromi = this.letService.aerodromi;
     //console.log('jjj', this.aerodromi);
     this.letovi = this.letService.vratiLetove;
-    console.log("")
+    console.log(this.letovi)
      }
 
   async ngOnInit() {
@@ -128,7 +128,7 @@ onCheckboxChangeAerodrom(event: any) {
       console.log("PAMTI", this.pamtiAero);
     }
     else if(event.target.checked == false){
-      alert("ELSEE");
+     // alert("ELSEE");
       this.items = this.pamtiAero;
       this.items1=this.pamtiAero;
     }
@@ -223,7 +223,7 @@ onCheckboxChangeKompanija(event: any) {
 
     } else if(event.target.checked == false){
       // alert("ELSEE");
-      this.items = this.pamtiKom;
+      this.items = this.filtriraniLetovi;
       this.items1=this.items;
     }
   });

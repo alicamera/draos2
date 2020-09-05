@@ -5,6 +5,9 @@ import { InfoLet } from '../../models/InfoLet';
 import { LetService } from '../../services/let.service';
 import { Letovi } from '../../models/Letovi';
 import { empty } from 'rxjs';
+import { HttpClient } from '@angular/common/http'; 
+import { Ponuda } from 'src/app/models/ponuda.ts';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-pocetna',
@@ -17,8 +20,10 @@ export class PocetnaComponent implements OnInit {
   infoLet: InfoLet;
   aerodrom: Array<string> = [];
   sakrij: boolean=true;
+  ponude : any;
+  svePonude : Ponuda[];
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private letService: LetService) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private letService: LetService, private httpClient: HttpClient) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -33,6 +38,13 @@ export class PocetnaComponent implements OnInit {
       datumpovratka: ['', Validators.required],
 
     });
+
+
+    this.httpClient.get("./../../../assets/ponude.json").subscribe(data =>{
+      console.log(data);
+      this.svePonude=data as Ponuda[];
+      this.ponude= (data as Ponuda[]).filter(x => x.oblast=="Ljeto 2020");
+    })
   }
 
   async trazi() {
@@ -56,6 +68,11 @@ export class PocetnaComponent implements OnInit {
     this.letService.infoLet=this.infoLet;
     this.letService.aerodromi=this.aerodrom;
 
+  }
+
+  navChanged(event: any){
+    console.log(event.tab.textLabel);
+    this.ponude= this.svePonude.filter(x => x.oblast===event.tab.textLabel);
   }
 
 }

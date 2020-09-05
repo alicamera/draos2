@@ -1,65 +1,68 @@
 <form *ngIf="filtersLoaded | async" [formGroup]="form" style="font-family: Verdana, Geneva, Tahoma, sans-serif; background-image: url('./../../assets/sky.jpg'); background-repeat: no-repeat;
 background-size: cover;">
-<div class="col-md-8" style="margin: auto; padding-bottom: 1%; padding-top: 1%; align-content: center; border:1px lightgrey; border-style: inset; text-align: center; background-color: #f4f6f6;  border-radius: 15px;"> <!-- DCDCDC-->
-  <label>{{infoLet.polaziste}} (Svi) - {{infoLet.odrediste}}  (Svi)</label>
-  <label style="margin-left:2em"> {{infoLet.klasa}} klasa</label> <!-- {{infoLet.brojOsoba}} osoba |-->
-  <label style="margin-left:2em" >{{infoLet.datumPolaska.toDateString() }}-{{infoLet.datumPovratka.toDateString()}}</label>
-</div>
+    <div class="col-md-8" style="margin: auto; padding-bottom: 1%; padding-top: 1%; align-content: center; border:1px lightgrey; border-style: inset; text-align: center; background-color: #f4f6f6;  border-radius: 15px;">
+        <!-- DCDCDC-->
+        <label>{{infoLet.polaziste}} (Svi) - {{infoLet.odrediste}}  (Svi)</label>
+        <label style="margin-left:2em"> {{infoLet.klasa}} klasa</label>
+        <!-- {{infoLet.brojOsoba}} osoba |-->
+        <label style="margin-left:2em">{{infoLet.datumPolaska.toDateString() }}-{{infoLet.datumPovratka.toDateString()}}</label>
+    </div>
 
-<div class="row col-md-12 justify-content-center" > <!-- f4f6f6-->
-  <!--
+    <div class="row col-md-12 justify-content-center">
+        <!-- f4f6f6-->
+        <!--
   <div class="col-md-2" style="margin: 1em; border: 1px solid black; display: grid;">
     <label>Najbolja ponuda</label>
     <label style="font-weight: bold;">540 BAM</label>
     <label>Trajanje: 3h 20 min</label>
   </div>
   -->
-  <div class="col-md-2" style="background-color: #f4f6f6; margin: 1em; border: 1px solid black; display: grid; padding-top: 1em; border-radius: 25px; -webkit-box-shadow: -10px 10px 39px -7px rgba(0,0,0,0.75);
+        <div class="col-md-2" style="background-color: #f4f6f6; margin: 1em; border: 1px solid black; display: grid; padding-top: 1em; border-radius: 25px; -webkit-box-shadow: -10px 10px 39px -7px rgba(0,0,0,0.75);
   -moz-box-shadow: -10px 10px 39px -7px rgba(0,0,0,0.75);
   box-shadow: -10px 10px 39px -7px rgba(0,0,0,0.75); ">
-    <label>Najjeftinija ponuda</label>
-    <label style="font-weight: bold;">{{najjeftinijaCijena}} BAM</label>
-    <label>Trajanje: {{najjeftinijaTrajanje}}</label>
-  </div>
-  <div class="col-md-2" style="background-color: #f4f6f6; margin: 1em; border: 1px solid black; display: grid;padding-top: 1em;; border-radius: 25px; -webkit-box-shadow: -10px 10px 39px -7px rgba(0,0,0,0.75);
+            <label>Najjeftinija ponuda</label>
+            <label style="font-weight: bold;">{{najjeftinijaCijena}} BAM</label>
+            <label>Trajanje: {{najjeftinijaTrajanje}}</label>
+        </div>
+        <div class="col-md-2" style="background-color: #f4f6f6; margin: 1em; border: 1px solid black; display: grid;padding-top: 1em;; border-radius: 25px; -webkit-box-shadow: -10px 10px 39px -7px rgba(0,0,0,0.75);
   -moz-box-shadow: -10px 10px 39px -7px rgba(0,0,0,0.75);
   box-shadow: -10px 10px 39px -7px rgba(0,0,0,0.75);">
-    <label>Najkraća ruta</label>
-    <label style="font-weight: bold;">{{najkracaCijena}} BAM</label>
-    <label>Trajanje: {{najkracaTrajanje}}</label>
-  </div>
-</div>
+            <label>Najkraća ruta</label>
+            <label style="font-weight: bold;">{{najkracaCijena}} BAM</label>
+            <label>Trajanje: {{najkracaTrajanje}}</label>
+        </div>
+    </div>
 
 
-<div class="row col-md-12 justify-content-left" style="background-color: #f4f6f6; background-image: url('./../../assets/sky.jpg'); background-repeat: no-repeat;
+    <div class="row col-md-12 justify-content-left" style="background-repeat: no-repeat;
 background-size: cover;">
-  <div class="col-md-3" id="propertyFilters" >
+        <div class="col-md-3" id="propertyFilters">
 
-    <div class="card form-group" style="border-radius: 25px;">
-      <h6 style="text-align: center;"><i>Filtriraj</i></h6>
-      <div class="card-body collapse-show" id="filterCollapse" style="border-radius: 25px;">
+            <div class="card form-group" style="border-radius: 25px;">
+                <h6 style="text-align: center;     margin-top: 10px;"><i>Filtriraj</i></h6>
+                <div class="card-body collapse-show" id="filterCollapse" style="border-radius: 25px;">
 
-        <div class="row justify-content-left col-md-12">
-          <label class="col-md-12 pl-5">Međustajanja</label>
+                    <div class="row justify-content-left col-md-12">
+                        <label class="col-md-12 pl-5">Međustajanja</label>
 
-          <div class="col-12 ">
-            <input name="check" type="checkbox" value="Direktni" formControlName="direkt" (click)="onCheckboxChange($event, this)"/>  Direktni
-          </div>
-          <div class="col-12" >
-            <input name="check" type="checkbox" value="1" formControlName="direkt1" (click)="onCheckboxChange($event, this)" />  1 stajanje
-          </div>
-          <div class="col-12">
-            <input name="check" type="checkbox" value="2+" formControlName="direkt2" (click)="onCheckboxChange($event, this)" />  2+ stajanja
-          </div>
+                        <div class="col-12 ">
+                            <input name="check" type="checkbox" value="Direktni" formControlName="direkt" (click)="onCheckboxChange($event, this)" /> Direktni
+                        </div>
+                        <div class="col-12">
+                            <input name="check" type="checkbox" value="1" formControlName="direkt1" (click)="onCheckboxChange($event, this)" /> 1 stajanje
+                        </div>
+                        <div class="col-12">
+                            <input name="check" type="checkbox" value="2+" formControlName="direkt2" (click)="onCheckboxChange($event, this)" /> 2+ stajanja
+                        </div>
 
-        </div>
+                    </div>
 
-        <div class="row justify-content-left pt-5">
+                    <div class="row justify-content-left pt-5">
 
-          <label class="col-md-12 pl-5"> <img  src="../../../assets/vrijeme.png" width="20px" height="20px">Max. trajanje leta</label>
-          <input  class="col-md-5" matInput class="form-control" formControlName="timePolazak" type="number" (change)="ngOnChangesTimeHour($event)" placeholder="Sati">
+                        <label class="col-md-12 pl-5"> <img  src="../../../assets/vrijeme.png" width="20px" height="20px">Max. trajanje leta</label>
+                        <input class="col-md-5" matInput class="form-control" formControlName="timePolazak" type="number" (change)="ngOnChangesTimeHour($event)" placeholder="Sati" style="margin-left: 25px; width: 80%;">
 
-          <!--
+                        <!--
              <input matInput class="form-control" formControlName="timePolazak" type="number" (change)="ngOnChangesTimeMinutes($event)" placeholder="Minute">
 
           <div class="input-group form-group col-md-12" style="width: 80%; margin-top: 1em;">
@@ -68,14 +71,14 @@ background-size: cover;">
             <label>23:59</label>
           </div>
           -->
-        </div>
+                    </div>
 
-        <div class="row justify-content-left pt-5">
+                    <div class="row justify-content-left pt-5">
 
-          <label class="col-md-12 pl-5">  <img  src="../../../assets/kofer.png" width="20px" height="20px">Broj kofera</label>
-          <input  class="col-md-5" matInput class="form-control" min="0" formControlName="Kofer" type="number" (change)="ngOnChangeBag($event)" placeholder="Kofer">
+                        <label class="col-md-12 pl-5">  <img  src="../../../assets/kofer.png" width="20px" height="20px">Broj kofera</label>
+                        <input class="col-md-5" matInput class="form-control" min="0" formControlName="Kofer" type="number" (change)="ngOnChangeBag($event)" placeholder="Kofer" style="margin-left: 25px; width: 80%;">
 
-          <!--
+                        <!--
              <input matInput class="form-control" formControlName="timePolazak" type="number" (change)="ngOnChangesTimeMinutes($event)" placeholder="Minute">
 
           <div class="input-group form-group col-md-12" style="width: 80%; margin-top: 1em;">
@@ -84,8 +87,8 @@ background-size: cover;">
             <label>23:59</label>
           </div>
           -->
-        </div>
-<!--
+                    </div>
+                    <!--
         <div class="row justify-content-left">
           <label>Vrijeme leta u povratku</label>
           <div class="input-group form-group col-md-12" style="width: 80%; margin-top: 1em;">
@@ -105,50 +108,50 @@ background-size: cover;">
         </div>
 -->
 
-        <div class="row justify-content-left col-md-12 pt-5">
-          <label class="col-md-12 pl-5">Kompanije</label>
-          <div class="col-12 ">
-            <input type="checkbox" value="Air France" (click)="onCheckboxChangeKompanija($event)" formControlName="availability"><img src="../../../assets/index.png" width="20px" height="20px">Air France
-          </div>
-          <div class="col-12 ">
-            <input type="checkbox"  value="Lufthansa" (click)="onCheckboxChangeKompanija($event)" formControlName="availability"><img  src="../../../assets/index.png" width="20px" height="20px">Lufthansa
-          </div>
-          <div class="col-12 ">
-            <input type="checkbox"  value="Turkish airlines" (click)="onCheckboxChangeKompanija($event)" formControlName="availability"><img  src="../../../assets/index.png" width="20px" height="20px">Turkish airlines
-          </div>
-          <div class="col-12 ">
-            <input type="checkbox"  value="Qatar Airways" (click)="onCheckboxChangeKompanija($event)" formControlName="availability"><img  src="../../../assets/index.png" width="20px" height="20px">Qatar Airways
-          </div>
+                    <div class="row justify-content-left col-md-12 pt-5">
+                        <label class="col-md-12 pl-5">Kompanije</label>
+                        <div class="col-12 ">
+                            <input type="checkbox" value="Air France" (click)="onCheckboxChangeKompanija($event)" formControlName="availability"><img src="../../../assets/index.png" width="20px" height="20px">Air France
+                        </div>
+                        <div class="col-12 ">
+                            <input type="checkbox" value="Lufthansa" (click)="onCheckboxChangeKompanija($event)" formControlName="availability"><img src="../../../assets/index.png" width="20px" height="20px">Lufthansa
+                        </div>
+                        <div class="col-12 ">
+                            <input type="checkbox" value="Turkish airlines" (click)="onCheckboxChangeKompanija($event)" formControlName="availability"><img src="../../../assets/index.png" width="20px" height="20px">Turkish airlines
+                        </div>
+                        <div class="col-12 ">
+                            <input type="checkbox" value="Qatar Airways" (click)="onCheckboxChangeKompanija($event)" formControlName="availability"><img src="../../../assets/index.png" width="20px" height="20px">Qatar Airways
+                        </div>
 
-        </div>
+                    </div>
 
-        <div class="row justify-content-left col-md-12 pt-5">
-          <label class="pl-5">Aerodromi</label>
-          <div class="col-12 ">
-            <input type="checkbox" formControlName="availability">  Isti u oba pravca
-          </div>
-          <div class="input-group form-group" style="width: 80%;" *ngFor="let e of aerodromi">
-            <div class="col-12 ">
-              <input type="checkbox" (click)="onCheckboxChangeAerodrom($event)" value="{{e}}" formControlName="availability">  {{e}}
-            </div>
-            <!--
+                    <div class="row justify-content-left col-md-12 pt-5">
+                        <label class="pl-5">Aerodromi</label>
+                        <div class="col-12 ">
+                            <input type="checkbox" formControlName="availability"> Isti u oba pravca
+                        </div>
+                        <div class="input-group form-group" style="width: 80%;" *ngFor="let e of aerodromi">
+                            <div class="col-12 ">
+                                <input type="checkbox" (click)="onCheckboxChangeAerodrom($event)" value="{{e}}" formControlName="availability"> {{e}}
+                            </div>
+                            <!--
                 <mat-checkbox formControlName="availability">FXL</mat-checkbox>
             -->
-          </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
 
-      </div>
-    </div>
-  </div>
-
-  <div class="col-lg-9 col-xs-12" id="propertiesList">
-    <div class="row justify-content-center">
-      <div class="col-12 form-group">
-        <app-kartica-ponuda *ngFor="let e of letovi" [let]="e"  [infoLet]="infoLet"></app-kartica-ponuda>
-      </div>
-    </div>
-  </div>
-<!--
+        <div class="col-lg-9 col-xs-12" id="propertiesList">
+            <div class="row justify-content-center">
+                <div class="col-12 form-group">
+                    <app-kartica-ponuda *ngFor="let e of letovi" [let]="e" [infoLet]="infoLet"></app-kartica-ponuda>
+                </div>
+            </div>
+        </div>
+        <!--
 
   <div class="col-md-1" id="propertyFilters">
     <div class="row justify-content-center" style="display: grid;border:1px solid black; margin-top: 1em;" >
@@ -167,5 +170,5 @@ background-size: cover;">
   </div>
 -->
 
-</div>
+    </div>
 </form>

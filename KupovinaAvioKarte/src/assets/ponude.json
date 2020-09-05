@@ -1,0 +1,66 @@
+[{
+        "cijena": "595",
+        "oblast": "Skandinavija",
+        "slika": "../../../assets/norway.jpg"
+    },
+    {
+        "cijena": "625",
+        "oblast": "Skandinavija",
+        "slika": "../../../assets/sweden.jpg"
+    },
+    {
+        "cijena": "789",
+        "oblast": "Skandinavija",
+        "slika": "../../../assets/finland.jpg"
+    },
+    {
+        "cijena": "400",
+        "oblast": "Ljeto 2020",
+        "slika": "../../../assets/albania.jpg"
+    },
+    {
+        "cijena": "539",
+        "oblast": "Ljeto 2020",
+        "slika": "../../../assets/grcka.jpg"
+    },
+    {
+        "cijena": "745",
+        "oblast": "Ljeto 2020",
+        "slika": "../../../assets/italija.jpg"
+    },
+    {
+        "cijena": "500",
+        "oblast": "Njemačka",
+        "slika": "../../../assets/frankfurt.png"
+    },
+    {
+        "cijena": "789",
+        "oblast": "Njemačka",
+        "slika": "../../../assets/munich.jpg"
+    },
+    {
+        "cijena": "965",
+        "oblast": "Njemačka",
+        "slika": "../../../assets/koln.jpg"
+    },
+    {
+        "cijena": "399",
+        "oblast": "Austrija",
+        "slika": "../../../assets/vienna.jpg"
+    },
+    {
+        "cijena": "389",
+        "oblast": "Austrija",
+        "slika": "../../../assets/graz.jpg"
+    },
+    {
+        "cijena": "1095",
+        "oblast": "Turska",
+        "slika": "../../../assets/istanbul.jpg"
+    },
+    {
+        "cijena": "999",
+        "oblast": "Turska",
+        "slika": "../../../assets/alanya.jpg"
+    }
+]
