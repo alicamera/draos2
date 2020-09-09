@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "heroku-postbuild": "ng build",
-    "postinstall": "ng build --aot --target=production"
+    "postinstall": "ng build"
   },
   "private": true,
   "dependencies": {
@@ -61,7 +61,7 @@
     "tslint": "~5.15.0"
   },
   "engines": {
-    "node": "12.18.3",
-    "npm": "6.9.0"
+    "node": "12.18.3"
+
   }
 }
