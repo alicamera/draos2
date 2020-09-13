@@ -20,11 +20,11 @@ placanje: Placanje;
 constructor() {
     // tslint:disable-next-line: max-line-length
     //1. linija Sarajevo-Berlin, polazak ponedeljak, povratak petkom, cijene:540, 200, klasa Ekonomska i prva
-    const let1 = new Letovi(true, 'Sarajevo','../../../assets/index1.png', 'Berlin','../../../assets/index.png', new Date('2020-09-14'), new Date('2020-09-18'),'Ekonomska', 540, 'SJJ', 'SXF', '00d 03h 20min', 1, 'Austrian airlines', 'Lufthansa', '10:30', '15:20', '11:30', '15:20');
+    const let1 = new Letovi(true, 'Sarajevo','../../../assets/index1.png', 'Berlin','../../../assets/index.png', new Date('2020-09-14'), new Date('2020-09-18'),'Ekonomska', 540, 'SJJ', 'SXF', '00d 03h 20min', 1, 'Austrian airlines', 'Lufthansa', '10:30', '13:20', '11:30', '14:20');
     this.letovi.push(let1);
-    let let11= new Letovi(true, 'Sarajevo','./../../assets/index1.png', 'Berlin','../../../assets/index.png', new Date('2020-09-14'), new Date('2020-09-18'),'Ekonomska', 200, 'SJJ', 'FXL', '00d 05h 20min', 4, 'Austrian airlines', 'Lufthansa', '10:30', '15:20', '11:30', '15:20');
+    let let11= new Letovi(true, 'Sarajevo','./../../assets/index1.png', 'Berlin','../../../assets/index.png', new Date('2020-09-14'), new Date('2020-09-18'),'Ekonomska', 200, 'SJJ', 'FXL', '00d 05h 20min', 4, 'Austrian airlines', 'Lufthansa', '10:00', '15:20', '10:00', '15:20');
     this.letovi.push(let11);
-    let let1prva= new Letovi(true, 'Sarajevo','./../../assets/index1.png', 'Berlin','../../../assets/index.png', new Date('2020-09-14'), new Date('2020-09-18'),'Prva', 880, 'SJJ', 'FXL', '00d 03h 20min', 1, 'Austrian airlines', 'Lufthansa', '10:30', '15:20', '11:30', '15:20');
+    let let1prva= new Letovi(true, 'Sarajevo','./../../assets/index1.png', 'Berlin','../../../assets/index.png', new Date('2020-09-14'), new Date('2020-09-18'),'Prva', 880, 'SJJ', 'FXL', '00d 03h 00min', 1, 'Austrian airlines', 'Lufthansa', '11:00', '14:00', '11:00', '14:00');
     this.letovi.push(let1prva);
 
    /* const let12 = new Letovi(true, 'Sarajevo','../../../assets/index1.png', 'Berlin','../../../assets/index.png', new Date('2020-09-21'), new Date('2020-09-25'),'Ekonomska', 540, 'SJJ', 'SXF', '00d 03h 20min', 1, 'Austrian airlines', 'Lufthansa', '10:30', '15:20', '11:30', '15:20');
