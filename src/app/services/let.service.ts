@@ -138,7 +138,7 @@ constructor() {
   }
   async getLet(letinfo: InfoLet) {
     this.infoLet = letinfo;
-
+    this.vratiLetove = [];
     this.letovi.forEach(element => {
       this.aerodromi.indexOf(element.aerodromDolaska) === -1 ? this.aerodromi.push(element.aerodromDolaska) : {};
       this.aerodromi.indexOf(element.aerodromPolaska) === -1 ? this.aerodromi.push(element.aerodromPolaska) : {};
