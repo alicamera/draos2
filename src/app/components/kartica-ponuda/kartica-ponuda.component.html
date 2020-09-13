@@ -1,120 +1,116 @@
 <div class="row">
-<div class="card text-center form-group col-md-10" style="border-color: black; margin-top: 1em;">
-  <div>
-  <div class="col-md-12">
-    <img src="{{this.let.slikaPolaska}}" style="width: 50px; height: 50px;">
-    <label style="font-weight: bold;">{{this.let.kompanijaPolaska}}</label>
-  </div>
-  <div class="col-md-12" style="margin-top: 1em">
-  <div class="row">
-    <div class="col-sm-3" style="display: grid;">
-        <label>Polazak: <i>
+    <div class="card text-center form-group col-md-10" style="border-color: black; margin-top: 1em;">
+        <div>
+            <div class="col-md-12">
+                <img src="{{this.let.slikaPolaska}}" style="width: 50px; height: 50px;">
+                <label style="font-weight: bold;">{{this.let.kompanijaPolaska}}</label>
+            </div>
+            <div class="col-md-12" style="margin-top: 1em">
+                <div class="row">
+                    <div class="col-sm-3" style="display: grid;">
+                        <label>Polazak: <i>
           {{this.let.vrijemePolaska}}
         </i></label>
-        <label>Aerodrom: <i>
+                        <label>Aerodrom: <i>
           {{this.let.aerodromPolaska}}
         </i></label>
-    </div>
-    <label style="font-size: 2em;">&#8594;</label>
+                    </div>
+                    <label style="font-size: 2em;">&#8594;</label>
 
-    <div class="col-sm-5" style="display: grid;">
-      <label>Trajanje leta: <i>
+                    <div class="col-sm-5" style="display: grid;">
+                        <label>Trajanje leta: <i>
         {{this.let.trajanje}}
       </i></label>
-      <label>
+                        <label *ngIf="this.let.brStajanja != 0">
         <i>
           {{this.let.brStajanja}}
         </i>međustajanje</label>
-  </div>
-  <label style="font-size: 2em;">&#8594;</label>
-    <div class="col-sm-3" style="display: grid;">
-      <label>Dolazak: <i>
+                    </div>
+                    <label style="font-size: 2em;">&#8594;</label>
+                    <div class="col-sm-3" style="display: grid;">
+                        <label>Dolazak: <i>
         {{this.let.vrijemeDolaska}}
       </i></label>
-      <label>Aerodrom: <i>
+                        <label>Aerodrom: <i>
         {{this.let.aerodromDolaska}}
       </i></label>
-  </div>
-  </div>
-  </div>
-</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<div *ngIf="infoLet.dvosmjerna===true">
-  <div class="col-md-12">
-    <img src="{{this.let.slikaDolaska}}" style="width: 50px; height: 50px;">
-    <label style="font-weight: bold; margin-top: 1em">{{this.let.kompanijaPovratka}} airlines</label>
-  </div>
-  <div class="col-md-12" style="margin-top: 1em">
-    <div class="row">
-      <div class="col-sm-3" style="display: grid;">
-          <label>Polazak: <i>
+        <div *ngIf="infoLet.dvosmjerna===true">
+            <div class="col-md-12">
+                <img src="{{this.let.slikaDolaska}}" style="width: 50px; height: 50px;">
+                <label style="font-weight: bold; margin-top: 1em">{{this.let.kompanijaPovratka}} airlines</label>
+            </div>
+            <div class="col-md-12" style="margin-top: 1em">
+                <div class="row">
+                    <div class="col-sm-3" style="display: grid;">
+                        <label>Polazak: <i>
             {{this.let.vrijemePolaska2}}
           </i></label>
-          <label>Aerodrom: <i>
+                        <label>Aerodrom: <i>
             {{this.let.aerodromDolaska}}
           </i></label>
-      </div>
-      <label style="font-size: 2em;">&#8594;</label>
+                    </div>
+                    <label style="font-size: 2em;">&#8594;</label>
 
-      <div class="col-sm-5" style="display: grid;">
-        <label>Trajanje leta: <i>
+                    <div class="col-sm-5" style="display: grid;">
+                        <label>Trajanje leta: <i>
           {{this.let.trajanje}}
         </i>
       </label>
-        <label>
+                        <label *ngIf="this.let.brStajanja != 0">
           <i>
             {{this.let.brStajanja}}
           </i>međustajanje</label>
-    </div>
-    <label style="font-size: 2em;">&#8594;</label>
-      <div class="col-sm-3" style="display: grid;">
-        <label>Dolazak: <i>
+                    </div>
+                    <label style="font-size: 2em;">&#8594;</label>
+                    <div class="col-sm-3" style="display: grid;">
+                        <label>Dolazak: <i>
           {{this.let.vrijemeDolaska2}}
         </i></label>
-        <label>Aerodrom: <i>
+                        <label>Aerodrom: <i>
           {{this.let.aerodromPolaska}}
         </i></label>
-    </div>
-    </div>
-  </div>
-</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-</div>
+    </div>
 
-<div *ngIf="putanja=='/listaPonuda' || (putanja=='/ponuda' && placanje=='0')" class="col-md-2" id="propertyFilters" style="display: flex; margin-bottom: 1em; margin-top: 1em; border-bottom:1px solid black;"> <!-- 12-->
-  <div class="row justify-content-center" style="display: grid; margin-top: 1em;position:absolute; bottom:0; left:0;" >
-    <div form-group style="margin-left:2em;" >
-      <label class="col-sd-12">Ukupno: {{this.let.cijena}} BAM</label>
-      <!--
+    <div *ngIf="putanja=='/listaPonuda' || (putanja=='/ponuda' && placanje=='0')" class="col-md-2" id="propertyFilters" style="display: flex; margin-bottom: 1em; margin-top: 1em; border-bottom:1px solid black;">
+        <!-- 12-->
+        <div class="row justify-content-center" style="display: grid; margin-top: 1em;position:absolute; bottom:0; left:0;">
+            <div form-group style="margin-left:2em;">
+                <label class="col-sd-12">Ukupno: {{this.let.cijena}} BAM</label>
+                <!--
       <a  class="col-md-2" href='' style="color: mediumblue; -webkit-box-shadow: -10px 36px 39px -7px rgba(0,0,0,0.75);
       -moz-box-shadow: -10px 36px 39px -7px rgba(0,0,0,0.75);
       box-shadow: -10px 36px 39px -7px rgba(0,0,0,0.75);">Detalji ponude</a>
       <br>
          -->
-      <div  *ngIf="putanja=='/listaPonuda'">
+                <div *ngIf="putanja=='/listaPonuda'">
 
-      <button (click)='trazi(this.let)' type="button" class="button button5 col-sd-12" style="height: 30%; border-radius: 5px; -webkit-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
+                    <button (click)='trazi(this.let)' type="button" class="button button5 col-sd-12" style="height: 30%; border-radius: 5px; -webkit-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
       -moz-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
       box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);">Pogledaj ponudu</button>
-      </div>
+                </div>
 
-      <div *ngIf="putanja=='/ponuda' && placanje=='0'" >
-        <button mat-button matStepperNext type="button" class="button button5 col-sd-12" style="height: 35%; border-radius: 5px; -webkit-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
+                <div *ngIf="putanja=='/ponuda' && placanje=='0'">
+                    <button mat-button matStepperNext type="button" class="button button5 col-sd-12" style="height: 35%; border-radius: 5px; -webkit-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
         -moz-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
         box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);">Kupi/Rezerviši kartu</button>
-      </div>
-      <div class="col-xs-1" style="margin-bottom:2em;">
+                </div>
+                <div class="col-xs-1" style="margin-bottom:2em;">
 
-      <!--
+                    <!--
          <button type="button" class="button button5">Ponuda</button>
       -->
-      </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
-</div>
-
-
-
-
-

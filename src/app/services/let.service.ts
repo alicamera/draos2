@@ -22,12 +22,12 @@ constructor() {
     //1. linija Sarajevo-Berlin, polazak ponedeljak, povratak petkom, cijene:540, 200, klasa Ekonomska i prva
     const let1 = new Letovi(true, 'Sarajevo','../../../assets/index1.png', 'Berlin','../../../assets/index.png', new Date('2020-09-14'), new Date('2020-09-18'),'Ekonomska', 540, 'SJJ', 'SXF', '00d 03h 20min', 1, 'Austrian airlines', 'Lufthansa', '10:30', '15:20', '11:30', '15:20');
     this.letovi.push(let1);
-    let let11= new Letovi(true, 'Sarajevo','./../../assets/index1.png', 'Berlin','../../../assets/index.png', new Date('2020-09-14'), new Date('2020-09-18'),'Ekonomska', 200, 'SJJ', 'FXL', '00d 07h 20min', 4, 'Austrian airlines', 'Lufthansa', '10:30', '15:20', '11:30', '15:20');
+    let let11= new Letovi(true, 'Sarajevo','./../../assets/index1.png', 'Berlin','../../../assets/index.png', new Date('2020-09-14'), new Date('2020-09-18'),'Ekonomska', 200, 'SJJ', 'FXL', '00d 05h 20min', 4, 'Austrian airlines', 'Lufthansa', '10:30', '15:20', '11:30', '15:20');
     this.letovi.push(let11);
     let let1prva= new Letovi(true, 'Sarajevo','./../../assets/index1.png', 'Berlin','../../../assets/index.png', new Date('2020-09-14'), new Date('2020-09-18'),'Prva', 880, 'SJJ', 'FXL', '00d 03h 20min', 1, 'Austrian airlines', 'Lufthansa', '10:30', '15:20', '11:30', '15:20');
     this.letovi.push(let1prva);
 
-    const let12 = new Letovi(true, 'Sarajevo','../../../assets/index1.png', 'Berlin','../../../assets/index.png', new Date('2020-09-21'), new Date('2020-09-25'),'Ekonomska', 540, 'SJJ', 'SXF', '00d 03h 20min', 1, 'Austrian airlines', 'Lufthansa', '10:30', '15:20', '11:30', '15:20');
+   /* const let12 = new Letovi(true, 'Sarajevo','../../../assets/index1.png', 'Berlin','../../../assets/index.png', new Date('2020-09-21'), new Date('2020-09-25'),'Ekonomska', 540, 'SJJ', 'SXF', '00d 03h 20min', 1, 'Austrian airlines', 'Lufthansa', '10:30', '15:20', '11:30', '15:20');
     this.letovi.push(let12);
     let let13= new Letovi(true, 'Sarajevo','./../../assets/index1.png', 'Berlin','../../../assets/index.png', new Date('2020-09-21'), new Date('2020-09-25'),'Ekonomska', 200, 'SJJ', 'FXL', '00d 07h 20min', 4, 'Austrian airlines', 'Lufthansa', '10:30', '15:20', '11:30', '15:20');
     this.letovi.push(let13);
@@ -125,7 +125,7 @@ constructor() {
     let let43= new Letovi(true, 'Sarajevo','./../../assets/index.png', 'Zagreb','../../../assets/index1.png', new Date('2020-09-23'), new Date('2020-09-26'),'Ekonomska', 200, 'SJJ', 'FXL', '00d 07h 20min', 4, 'Lufthansa', 'Austrian airlines', '10:30', '15:20', '11:30', '15:20');
     this.letovi.push(let43);
     const let41prva = new Letovi(true, 'Sarajevo','../../../assets/index.png', 'Zagreb','../../../assets/index1.png', new Date('2020-09-23'), new Date('2020-09-26'),'Prva', 880, 'SJJ', 'SXF', '00d 03h 20min', 1, 'Lufthansa', 'Austrian airlines', '10:30', '15:20', '11:30', '15:20');
-    this.letovi.push(let41prva);
+    this.letovi.push(let41prva);*/
 
     //5. linija Sarajevo-Beograd, svaki cetvrtak i utorak
 
@@ -144,11 +144,17 @@ constructor() {
       this.aerodromi.indexOf(element.aerodromPolaska) === -1 ? this.aerodromi.push(element.aerodromPolaska) : {};
       console.log("Datum iz info leta", letinfo.datumPolaska);
       // tslint:disable-next-line: max-line-length
-      if (letinfo.polaziste == element.polaziste && letinfo.odrediste == element.odrediste && letinfo.datumPolaska.toDateString() == element.datumPolaska.toDateString() &&
-        letinfo.datumPovratka.toDateString() == element.datumPovratka.toDateString() && letinfo.klasa == element.klasa) {
+      
            this.vratiLetove.push(element);
+           element.datumPolaska = letinfo.datumPolaska;
+           element.datumPovratka = letinfo.datumPovratka;
+           element.klasa = letinfo.klasa;
+           element.polaziste = letinfo.polaziste; 
+           element.odrediste = letinfo.odrediste;
+           element.samoDirektni = letinfo.samoDirektni;
+           if(element.samoDirektni) element.brStajanja = 0;
            console.log('imamo podudaranje');
-        }
+        
     });
     return this.vratiLetove;
 }

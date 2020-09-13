@@ -1,126 +1,126 @@
 <div *ngIf="pokazi">
-<form [formGroup]="form">
-<div class="row">
-  <div class="card text-center form-group col-md-10" style="border-color: black; margin-top: 1em;">
-    <div>
+    <form [formGroup]="form">
+        <div class="row">
+            <div class="card text-center form-group col-md-10" style="border-color: black; margin-top: 1em;">
+                <div>
 
-    <div class="col-md-12" style="margin-top: 1em">
-    <div class="row">
-      <div class="col-sm-3" style="display: grid;">
-         <label>Ime i prezime putnika:</label>
-         <label><i>{{_putnik.ime}} {{_putnik.prezime}}</i></label>
-      </div>
+                    <div class="col-md-12" style="margin-top: 1em">
+                        <div class="row">
+                            <div class="col-sm-3" style="display: grid;">
+                                <label>Ime i prezime putnika:</label>
+                                <label><i>{{_putnik.ime}} {{_putnik.prezime}}</i></label>
+                            </div>
 
-      <div class="col-sm-5" style="display: grid;">
-        <label>Broj telefona</label>
-        <label><i>{{_putnik.broj}}</i></label>
-    </div>
+                            <div class="col-sm-5" style="display: grid;">
+                                <label>Broj telefona</label>
+                                <label><i>{{_putnik.broj}}</i></label>
+                            </div>
 
-      <div class="col-sm-3" style="display: grid;">
-        <label>Dodatne pogodnosti:</label>
-        <div *ngIf="cijeneP">
-          <div  *ngFor="let item of vrijednosti"  >
+                            <div class="col-sm-3" style="display: grid;">
+                                <label>Dodatne pogodnosti:</label>
+                                <div *ngIf="cijeneP">
+                                    <div *ngFor="let item of vrijednosti">
 
-          <label ><i> {{item}} </i></label>
+                                        <label><i> {{item}} </i></label>
 
-        </div>
-      </div>
-    </div>
+                                    </div>
+                                </div>
+                            </div>
 
-    </div>
-    </div>
-  </div>
-  <div class="col-md-12">
-    <label style="text-align: left;font-weight: bold; font-size: large;">UKUPNO </label>
-    <label style="text-align: right; font-weight: bold; font-size: large;"> {{ this.suma}} KM</label>
-      </div>
-<!--
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label style="text-align: left;font-weight: bold; font-size: large;">UKUPNO  </label>
+                    <label style="text-align: right; font-weight: bold; font-size: large;"> {{ this.suma}} KM</label>
+                </div>
+                <!--
       <div class="col-md-12" *ngIf="potvrda=='1'" >
         <div> <label style="text-align: right; font-weight: bold; font-size: medium;">{{placanje.adresa}} + {{placanje.pbroj}} Adresa i postanski broj</label></div>
         <div> <label style="text-align: right; font-weight: bold; font-size: medium;">{{placanje.brojkartice}} Broj kartice</label></div>
       </div>
     -->
-</div>
-</div>
-<!--
+            </div>
+        </div>
+        <!--
 -->
 
-<div class="row"  *ngIf="potvrda=='0'">
-  <div class="card text-center form-group col-md-10" style="border-color: black; margin-top: 1em;">
-    <div>
-      <label><img src="../../../assets/kartica.png" width="30px" height="30px">Informacije o plaćanju</label>
-    <div class="col-md-12" style="margin-top: 1em">
-      <label><img src="../../../assets/info.png " width="30px" height="30px">Unesite informacije sa kreditne/debitne kartice </label>
-    <div class="row col-md-12">
-      <div class="col-md-5" style="display: grid;">
-         <div class="col-md-12" style="margin-top: 1em; text-align: left;">
-          <label>Ime vlasnika kartice:</label>
-          <input matInput class="form-control" type="text" formControlName="ime" placeholder="Ime" required >
-          <span style="color:red" *ngIf="form.get('ime').touched && form.get('ime').errors">Polje nije adekvatno popounjeno!</span>
+        <div class="row" *ngIf="potvrda=='0'">
+            <div class="card text-center form-group col-md-10" style="border-color: black; margin-top: 1em;">
+                <div>
+                    <label><img src="../../../assets/kartica.png" width="30px" height="30px">Informacije o plaćanju</label>
+                    <div class="col-md-12" style="margin-top: 1em">
+                        <label><img src="../../../assets/info.png " width="30px" height="30px">Unesite informacije sa kreditne/debitne kartice </label>
+                        <div class="row col-md-12">
+                            <div class="col-md-5" style="display: grid;">
+                                <div class="col-md-12" style="margin-top: 1em; text-align: left;">
+                                    <label>Ime vlasnika kartice:</label>
+                                    <input matInput class="form-control" type="text" formControlName="ime" placeholder="Ime" required>
+                                    <span style="color:red" *ngIf="form.get('ime').touched && form.get('ime').errors">Polje nije adekvatno popounjeno!</span>
 
-          <label>Prezime vlasnika kartice:</label>
-          <input matInput class="form-control" type="text" formControlName="prezime" placeholder="Prezime" required >
-          <span style="color:red" *ngIf="form.get('prezime').touched && form.get('prezime').errors">Polje nije adekvatno popounjeno!</span>
+                                    <label>Prezime vlasnika kartice:</label>
+                                    <input matInput class="form-control" type="text" formControlName="prezime" placeholder="Prezime" required>
+                                    <span style="color:red" *ngIf="form.get('prezime').touched && form.get('prezime').errors">Polje nije adekvatno popounjeno!</span>
 
-          <label>Adresa vlasnika kartice:</label>
-          <input matInput class="form-control" type="text" formControlName="adresa" placeholder="Adresa" required >
-          <span style="color:red" *ngIf="form.get('adresa').touched && form.get('adresa').errors">Polje nije adekvatno popounjeno!</span>
+                                    <label>Adresa vlasnika kartice:</label>
+                                    <input matInput class="form-control" type="text" formControlName="adresa" placeholder="Adresa" required>
+                                    <span style="color:red" *ngIf="form.get('adresa').touched && form.get('adresa').errors">Polje nije adekvatno popounjeno!</span>
 
-          <label>Poštanski broj vlasnika kartice:</label>
-          <input matInput class="form-control" type="text" formControlName="pbroj" placeholder="Poštanski broj" required >
-          <span style="color:red" *ngIf="form.get('pbroj').touched && form.get('pbroj').errors">Polje nije adekvatno popounjeno!</span>
+                                    <label>Poštanski broj vlasnika kartice:</label>
+                                    <input matInput class="form-control" type="text" formControlName="pbroj" placeholder="Poštanski broj" required>
+                                    <span style="color:red" *ngIf="form.get('pbroj').touched && form.get('pbroj').errors">Polje nije adekvatno popounjeno!</span>
 
-          <label>Grad vlasnika kartice:</label>
-          <input matInput class="form-control" type="text" formControlName="grad" placeholder="Grad" required >
-          <span style="color:red" *ngIf="form.get('grad').touched && form.get('grad').errors">Polje nije adekvatno popounjeno!</span>
+                                    <label>Grad vlasnika kartice:</label>
+                                    <input matInput class="form-control" type="text" formControlName="grad" placeholder="Grad" required>
+                                    <span style="color:red" *ngIf="form.get('grad').touched && form.get('grad').errors">Polje nije adekvatno popounjeno!</span>
 
+                                </div>
+                            </div>
+
+                            <div class="col-md-5" style="display: grid;">
+                                <label>Izaberite vrstu kartice:</label>
+                                <div>
+                                    <img src="../../../assets/visa.webp" width="75px" height="50px" id="imageId" (click)="mark('imageId')">
+                                    <img src="../../../assets/unio pay.png" width="100px" height="50px" style="padding-left: 1em;" id="imageId1" (click)="mark('imageId1')">
+                                    <img src="../../../assets/visa.webp" width="75px" height="50px" style="padding-left: 1em;" id="imageId2" (click)="mark('imageId2')">
+                                </div>
+                                <div>
+                                    <img src="../../../assets/maestro.png" width="100px" height="50px" id="imageId3" (click)="mark('imageId3')">
+                                    <img src="../../../assets/american.png" width="100px" height="50px" style="padding-left: 1em;" id="imageId4" (click)="mark('imageId4')">
+                                    <img src="../../../assets/maestro.png" width="100px" height="50px" style="padding-left: 1em;" id="imageId5" (click)="mark('imageId5')">
+                                </div>
+                                <div class="col-md-6" style="margin-top: 1em; margin-bottom: 1em">
+                                    <input matInput class="form-control" type="text" formControlName="kbroj" placeholder="Broj kartice" required>
+                                    <span style="color:red" *ngIf="form.get('kbroj').touched && form.get('kbroj').errors">Polje nije adekvatno popounjeno!</span>
+
+                                    <mat-form-field class="pl-4">
+                                        <input matInput [matDatepicker]="picker1" formControlName="datumIsteka" placeholder="Datum isteka kartice">
+                                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker1></mat-datepicker>
+                                    </mat-form-field>
+                                    <span style="color:red" *ngIf="form.get('datumIsteka').touched && form.get('datumIsteka').errors">Polje nije adekvatno popounjeno!</span>
+
+                                    <input matInput class="form-control" type="text" formControlName="kod" placeholder="CVV kod" required>
+                                    <span style="color:red" *ngIf="form.get('kod').touched && form.get('kod').errors">Polje nije adekvatno popounjeno!</span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <mat-radio-button (click)="uslovi()" value="true">Pročiao/la sam i prihvatam uslove putovanja...</mat-radio-button>
+                    </div>
+                </div>
+            </div>
         </div>
-       </div>
-
-      <div class="col-md-5" style="display: grid;">
-        <label>Izaberite vrstu kartice:</label>
-        <div>
-          <img src="../../../assets/visa.webp" width="75px" height="50px"  id="imageId" (click)="mark('imageId')">
-          <img src="../../../assets/unio pay.png" width="100px" height="50px" style="padding-left: 1em;"  id="imageId1" (click)="mark('imageId1')">
-          <img src="../../../assets/visa.webp" width="75px" height="50px" style="padding-left: 1em;"  id="imageId2" (click)="mark('imageId2')">
-        </div>
-        <div>
-          <img src="../../../assets/maestro.png" width="100px" height="50px"  id="imageId3" (click)="mark('imageId3')">
-          <img src="../../../assets/american.png" width="100px" height="50px" style="padding-left: 1em;"  id="imageId4" (click)="mark('imageId4')">
-          <img src="../../../assets/maestro.png" width="100px" height="50px" style="padding-left: 1em;"  id="imageId5" (click)="mark('imageId5')">
-        </div>
-        <div class="col-md-6" style="margin-top: 1em; margin-bottom: 1em">
-          <input matInput class="form-control" type="text" formControlName="kbroj" placeholder="Broj kartice" required >
-          <span style="color:red" *ngIf="form.get('kbroj').touched && form.get('kbroj').errors">Polje nije adekvatno popounjeno!</span>
-
-          <mat-form-field class="pl-4">
-            <input matInput [matDatepicker]="picker1" formControlName="datumIsteka" placeholder="Datum isteka kartice">
-            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-            <mat-datepicker #picker1></mat-datepicker>
-          </mat-form-field>
-          <span style="color:red" *ngIf="form.get('datumIsteka').touched && form.get('datumIsteka').errors">Polje nije adekvatno popounjeno!</span>
-
-          <input matInput class="form-control" type="text" formControlName="kod" placeholder="CVV kod" required >
-          <span style="color:red" *ngIf="form.get('kod').touched && form.get('kod').errors">Polje nije adekvatno popounjeno!</span>
-
-        </div>
-
-    </div>
-
-      </div>
-      <mat-radio-button (click)="uslovi()" value="true">Pročiao/la sam i prihvatam uslove putovanja...</mat-radio-button>
-    </div>
-  </div>
-</div>
-</div>
-<div  *ngIf="potvrda=='0'" style="text-align: center; height: 5em;">
-  <button mat-button matStepperPrevious style="border-radius: 15px;height: 50%;width: 5em;">Nazad</button>
-  <button [disabled]="!form.valid" (click)="dalje()" mat-button matStepperNext type="button" class="button button5 col-sd-12" style="width: 5em;height: 50%; border-radius: 5px; -webkit-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
+        <div *ngIf="potvrda=='0'" style="text-align: center; height: 5em;">
+            <button mat-button matStepperPrevious style="border-radius: 15px;height: 50%;width: 5em;">Nazad</button>
+            <button [disabled]="!form.valid" (click)="dalje()" mat-button matStepperNext type="button" class="button button5 col-sd-12" style="width: 5em;height: 50%; border-radius: 5px; -webkit-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);
   box-shadow: 10px 10px 53px 0px rgba(0,0,0,0.75);">Dalje</button>
-  <p>
-    <span style="color:red; font-size: small;" *ngIf="!form.valid">Molimo Vas da adekvatno popunite sva polja!</span>
-  </p>
-</div>
-</form>
+            <p>
+                <span style="color:red; font-size: small;" *ngIf="!form.valid">Molimo Vas da adekvatno popunite sva polja!</span>
+            </p>
+        </div>
+    </form>
 </div>
